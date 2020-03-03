@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  belongs_to :supermarkets
+  belongs_to :supermarket
 end
