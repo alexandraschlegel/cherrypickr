@@ -1,0 +1,2 @@
+class Supermarket < ApplicationRecord
+end
