@@ -1,6 +1,13 @@
 .avatar {
   width: 40px;
   border-radius: 50%;
+  display: flex;
+}
+
+  img {
+    height: 30px;
+    margin: auto;
+    padding-left: 15px;
 }
 .avatar-large {
   width: 56px;
