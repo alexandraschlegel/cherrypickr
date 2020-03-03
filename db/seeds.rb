@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+require "nokogiri"
+
+Supermarket.create()
+
+url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
+doc = Nokogiri::HTML(open(url))
+doc.search(".tile-content").each do |result_card|
+  name = result_card.search(".sc-cSHVUG").text
+  price = result_card.search(".price-per-sellable-unit").text
+  Product.create!(name: name, price_cents: price.split.last.to_f, supermarket_id: Supermarket.first.id)
+end
