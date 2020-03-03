@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  belongs_to :supermarkets
   has_many :deals
+  belongs_to :supermarket
 end
