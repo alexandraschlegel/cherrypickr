@@ -7,6 +7,17 @@
     </div>
   <% end %>
 
+   <div class="searchbar">
+    <%= form_tag products_path, method: :get do %>
+
+    <%= text_field_tag :product,
+      params[:product],
+      # class: "form-control",
+      placeholder: "Enter Product"
+    %>
+    <% end %>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
