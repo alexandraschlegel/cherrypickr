@@ -4,18 +4,18 @@
   </div>
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-md-4">
-        <div class="card-trip mb-3 p-3" style="border-radius:10px">
+      <div class="col-md-3">
+        <div class="card-index mb-3 p-3" style="border-radius:10px">
           <%= image_tag product.image, alt: "alttext", class: "prod-img" %>
-          <div class="card-trip-infos">
             <p class="mb-2" style="width: 170px"><%= product.name%></p>
-            <p><strong>Price from:</strong> <%= product.price %>
+            <p><strong>Price from:</strong> <strong><%=product.price%></strong>
             <div>
               <%= link_to "View Details", product_path(product), class: "btn btn-primary rounded mt-3"%>
             </div>
           </div>
-        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+

@@ -4,33 +4,32 @@
   </div>
 
   <div class="searchbox">
-    <%= form_tag products_path, method: :get do %>
+    <%= form_tag products_path, method: :get, class: "search-form" do %>
 
-    <%= text_field_tag :product,
-      params[:product],
-      class: "form-control",
-      placeholder: "Enter Product"
-    %>
+      <%= text_field_tag :product,
+        params[:product],
+        class: "input100",
+        placeholder: "Enter Product"
+      %>
 
-      <div class="flexbox">
+      <div class="dflex">
         <%= text_field_tag :postcode,
             params[:postcode],
-            class: "form-a",
+            class: "input50",
             placeholder: "Enter Postcode"
         %>
 
         <%= text_field_tag :range,
             params[:range],
-            class: "form-b",
+            class: "input50",
             placeholder: "Enter range"
         %>
       </div>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "input100 cherry-btn" %>
+    <% end %>
   </div>
 </div>
-
 <% end %>
-
 
 
 
