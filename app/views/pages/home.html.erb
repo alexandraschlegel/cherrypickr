@@ -21,7 +21,15 @@
 
 
 
-
+<div class="search-container">
+        <%= text_field_tag :query,
+          params[:query]
+        %>
+      <% end %>
+      <div class="search">
+        <%= submit_tag "Search" %>
+      </div>
+    </div>
 
 
 
