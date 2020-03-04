@@ -3,8 +3,9 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    if params[:query].present?
-      @products = Product.search_by_title(params[:query])
+    if params[:product].present?
+      @products = Product.where("name ILIKE ?", "%#{params[:product]}%")
+
     else
       @products = Product.all
     end

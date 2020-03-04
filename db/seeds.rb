@@ -43,3 +43,27 @@ doc.search(".category-item__wrapper-link").each do |result_card|
   Product.create!(supermarket: aldi, image: image_src, price: price, name: prod_name)
 end
 
+morrisons = Supermarket.create!(name: "Morrisons", website: "https://groceries.morrisons.com")
+
+url = "https://groceries.morrisons.com/search?entry=ice%20cream"
+doc = Nokogiri::HTML(open(url))
+doc.search(".fop-contentWrapper").each do |result_card|
+  prod_name = result_card.search(".fop-title").text
+  price = result_card.search(".fop-price").text
+# p size = result_card.search(".fop-catch-weight").text
+  image_src = result_card.search(".fop-img").attr('src').value
+Product.create!(supermarket: morrisons, image: image_src, price: price, name: prod_name)
+end
+
+# iceland = Supermarket.create!(name: "Iceland", website: "https://www.iceland.co.uk")
+
+# url = "https://www.iceland.co.uk/search?q=ice%20cream"
+# doc = Nokogiri::HTML(open(url))
+# doc.search(".product-tile").each do |result_card|
+#   prod_name  = result_card.search(".product-name").text
+#   price = result_card.search(".product-sales-price").text
+#   # image_src = result_card.search(".thumb-link").attr('src').value
+#   Product.create!(supermarket: iceland, price: price, name: prod_name)
+# end
+
+
