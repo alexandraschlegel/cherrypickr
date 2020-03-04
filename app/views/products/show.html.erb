@@ -1,1 +1,56 @@
-show.html.erb
+
+
+<%= image_tag @product.image, alt: "alttext" %>
+
+
+<div class="product-container">
+  <div class="left-section">
+    <h1> Your Product in Your Area
+      <button class="btn-1"> Get Price alert </button>
+
+  </div>
+  <div class="right section">
+    <div class="top sub-section">
+      <h2><%= @product.name %></h2>
+      <p><%= @product.price %></p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section {
+    height: 100%;
+    width: 50%;
+  }
+
+  .right {
+    background-color: red;
+    height: 100%;
+    width: 60%;
+  }
+
+  .left {
+    background-color:;
+    height: 100%;
+    width: 40%;
+  }
+  .product-container {
+    display: flex;
+    height: 100vh;
+    border-radius: 5px;
+  }
+
+  /*.sub-section {
+    height: 50%;
+  }*/
+
+  .top {
+    background-color: none;
+    height: 34%;
+  }
+
+  .bottom {
+    background-color: yellow;
+    height: 66%;
+  }
+</style>
