@@ -8,4 +8,9 @@ class UserProductsController < ApplicationController
   def create
   end
 
+  def product_params
+    params.require(:product).permit(:name, :supermarket, :address)
+  end
+  params.require(:user).permit(:product_id)
+
 end
