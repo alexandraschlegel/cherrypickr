@@ -1,56 +1,37 @@
 
-
-<%= image_tag @product.image, alt: "alttext" %>
-
-
 <div class="product-container">
   <div class="left-section">
     <h1> Your Product in Your Area
-      <button class="btn-1"> Get Price alert </button>
-
+<%= image_tag @product.image, alt: "alttext" %>
+      <h2><%= @product.name %></h2>
+      <p><%= @product.price %></p>
+<!-- Button trigger modal -->
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
+          Get Price alert
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Search for more</button>
+            </div>
+            </div>
+          </div>
+        </div>
   </div>
   <div class="right section">
     <div class="top sub-section">
-      <h2><%= @product.name %></h2>
-      <p><%= @product.price %></p>
     </div>
   </div>
 </div>
 
-<style>
-  .section {
-    height: 100%;
-    width: 50%;
-  }
-
-  .right {
-    background-color: red;
-    height: 100%;
-    width: 60%;
-  }
-
-  .left {
-    background-color:;
-    height: 100%;
-    width: 40%;
-  }
-  .product-container {
-    display: flex;
-    height: 100vh;
-    border-radius: 5px;
-  }
-
-  /*.sub-section {
-    height: 50%;
-  }*/
-
-  .top {
-    background-color: none;
-    height: 34%;
-  }
-
-  .bottom {
-    background-color: yellow;
-    height: 66%;
-  }
-</style>

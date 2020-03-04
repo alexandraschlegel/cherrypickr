@@ -1,0 +1,58 @@
+
+.section {
+    height: 100%;
+    width: 50%;
+  }
+  .right {
+    background-color: red;
+    height: 100%;
+    width: 60px;
+    margin: auto;
+    border-radius: 50%
+  }
+  .left {
+    height: 100%;
+    width: 40%;
+  }
+  .product-container {
+    display: flex;
+    height: 100vh;
+    border-radius: 5px;
+    margin-left: 73px;
+  }
+    .product-container h1 {
+    color: #95A5B8;
+    margin-top: 100px;
+  }
+  /*.sub-section {
+    height: 50%;
+  }*/
+  .top {
+    background-color: none;
+    height: 34%;
+  }
+  .bottom {
+    background-color: yellow;
+    height: 66%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
