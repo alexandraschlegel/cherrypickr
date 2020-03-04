@@ -31,4 +31,15 @@ doc.search(".tile-content").each do |result_card|
   Product.create!(supermarket: tesco, image: image_src, price: price, name: prod_name)
 end
 
+aldi = Supermarket.create!(name: "Aldi", website: "https://www.aldi.co.uk")
+
+url = "https://www.aldi.co.uk/c/groceries/frozen-food/ice-cream-and-desserts"
+doc = Nokogiri::HTML(open(url))
+doc.search(".category-item__wrapper-link").each do |result_card|
+  doc2 = Nokogiri::HTML(open(result_card.attr('href')))
+  prod_name = doc2.search(".product-details__name").text
+  price = "£ " + doc2.search(".product-price__value").text.strip
+  image_src = doc2.search(".product-image-viewer-section__large").search("img").attr('src').value
+  Product.create!(supermarket: aldi, image: image_src, price: price, name: prod_name)
+end
 
