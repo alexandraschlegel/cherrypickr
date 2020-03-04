@@ -1,7 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= action_name == 'home' ? 'clear' : '' %>">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+    <div class="avatar">
+      <h1 class="firstheading"> CherryPickr </h1>
+      <%= image_tag "cherry.png" %>
+    </div>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,9 +30,15 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <div class="links">
+            <a href="default"> Login</a>
+            <a href="sss" >Sign Up</a>
+          </div>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+
+
+
