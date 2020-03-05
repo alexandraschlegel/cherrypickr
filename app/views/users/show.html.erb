@@ -9,7 +9,7 @@
           <%= image_tag product.image, alt: "alttext", class: "prod-img" %>
           <div class="card-trip-infos">
             <p class="mb-2" style="width: 170px"><%= product.name%></p>
-            <p><strong>Price from:</strong> <strong><%=product.price%></strong>
+            <p><strong>Price from:</strong> <strong><%=product.price%></strong></p>
             <div>
               <%= link_to "View Details", product_path(product), class: "btn btn-primary rounded mt-3"%>
             </div>
