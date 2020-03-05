@@ -8,5 +8,12 @@ class Product < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  before_save :set_price_cents
+
+  private
+
+  def set_price_cents
+    self.price_cents = price.split("£")[1]&.strip.to_f * 100
+  end
 
 end
