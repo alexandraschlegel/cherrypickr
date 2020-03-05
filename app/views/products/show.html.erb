@@ -4,11 +4,16 @@
     <h1> Your Product in Your Area
     <%= image_tag @product.image, alt: "alttext" %>
     <h2><%= @product.name %></h2>
-    <p><%= @product.price %></p>
+
+    <div class="d-flex">
+      <%= @product.supermarket.name %>
+      <%= @product.price %>
+      <% @other_ones.each do |f| %>
+      <p><%= f.supermarket.name %></p>
+      <p><%= f.price %></p>
+      <% end %>
+    </div>
 <!-- Button trigger modal -->
-    <% @other_ones.each do |f| %>
-      <p><%= f.name %></p>
-    <% end %>
     <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
       Get Price alert
     </button>
