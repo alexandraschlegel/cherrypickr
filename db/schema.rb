@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 2020_03_04_145215) do
   create_table "supermarkets", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.string "name"
     t.string "website"
   end
