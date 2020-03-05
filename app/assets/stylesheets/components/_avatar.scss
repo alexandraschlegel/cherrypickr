@@ -4,10 +4,11 @@
   display: flex;
 }
 
-  img {
-    height: 30px;
-    margin: auto;
-    padding-left: 15px;
+.avatar-img {
+  height: 30px;
+  margin: auto;
+  transform: rotate(-24.41deg);
+  margin-left: 84px;
 }
 .avatar-large {
   width: 56px;
