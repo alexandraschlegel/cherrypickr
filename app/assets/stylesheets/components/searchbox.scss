@@ -1,31 +1,40 @@
 .searchbox {
-  width: 60%;
-  margin-top: 50px;
+  width: 48%;
+  margin-top: 48px;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .dflex {
-  width: 100%;
+  width: 99%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .input50 {
-  width: 50%;
+  width: 48%;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
+  padding: 8px;
 }
 .input100 {
-  width: calc(100% - 20px);
+  width: calc(100% - 24px);
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
+  padding: 8px;
 }
 .search-form {
-  padding: 15px;
+  padding: 20px;
+  padding-bottom: 32px;
+  padding-top: 32px;
+
 }
 .input100.cherry-btn{
 background-color:#95A5B8;
-border-radius: 4px;
+border-radius: 8px;
+padding: 12px;
+width: calc(100% - 24px);
+opacity: 0.6;
+
 }
 .dflex.input50{
 }
