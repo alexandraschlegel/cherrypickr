@@ -1,6 +1,5 @@
 require "open-uri"
 require "nokogiri"
-require "pry-byebug"
 
 Product.destroy_all
 Supermarket.destroy_all
@@ -80,13 +79,6 @@ seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1
     Product.create(supermarket: waitrose, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
-# waitrose_url = "https://www.tesco.com/groceries/en-GB/search?query=oat%20milk"
-# doc = Nokogiri::HTML(open(url))
-# binding.pry
-# doc.search(".tile-content").each do |result_card|
-#   image_src = result_card.search(".product-image").attr('src').value
-# binding.pry
-
 
 
 sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsburys.com")
