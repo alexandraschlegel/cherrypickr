@@ -12,9 +12,12 @@
         <h5><%= @product.supermarket.name %></h5>
         <%= @product.price %>
         <br>
+        <div class="flex-box">
         <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
           Create a Price Alert!
         </button>
+        <%= link_to "Get Directions", supermarket_path(@product.supermarket), class: "btn" %>
+      </div>
       </div>
       <%= image_tag @product.image, alt: "alttext", class: "product-show-image" %>
     </div>
@@ -26,7 +29,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -34,7 +37,7 @@
             <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
               I am already on your <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
               <br>
-              You can find me at your nearest <%= @product.supermarket.name %>, but I will let you know when I get cheaper!
+              You can find me at your nearest <%= link_to '@product.supermarket.name', supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
             <% else %>
               You can find me at your nearest <%= @product.supermarket.name %>, or click
               <%= render "user_products/form" %>
@@ -69,6 +72,7 @@
 
 <style>
   .product-show-card {
+    border-radius: 20px;
     transition: ease-in-out 0.5s;
     margin-top: 25px;
     display: flex;
@@ -87,7 +91,8 @@
   }
 
   .product-show-button {
-    margin-top: 50px;
+    margin-top: 20px;
+     border-radius: 10px;
   }
 
   .other-product {
@@ -107,6 +112,7 @@
   }
 
   .other-product:hover {
+    border-radius: 30px;
     border-left: 2px solid #ef5b5b;
     border-right: 2px solid #ef5b5b;
     transition: ease-in-out 0.5s;
@@ -117,6 +123,11 @@
 
   .other-product:first-child {
     margin-top: 45px;
+    border-radius: 10px;
+  }
+  .modal-body{
+    border-radius: 12px;
+    color:#95A5B8;
   }
 </style>
 <!--
