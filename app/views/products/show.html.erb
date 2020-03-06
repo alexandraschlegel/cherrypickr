@@ -5,13 +5,8 @@
     <%= image_tag @product.image, alt: "alttext" %>
     <h2><%= @product.name %></h2>
 
-    <div class="d-flex">
-      <%= @product.supermarket.name %>
-      <%= @product.price %>
-      <% @other_ones.each do |f| %>
-      <p><%= f.supermarket.name %></p>
-      <p><%= f.price %></p>
-      <% end %>
+    <div class="">
+      <h5><%= @product.supermarket.name %></h5><p><%= @product.price %></p>
     </div>
 <!-- Button trigger modal -->
     <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
@@ -28,8 +23,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <% if @product.user_products.map { |e| e.id } == current_user.id %>
-              I am already on your watchlist!
+            <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
+              I am already on your <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
+              <br>
               You can find me at your nearest <%= @product.supermarket.name %>, but I will let you know when I get cheaper!
             <% else %>
               You can find me at your nearest <%= @product.supermarket.name %>, or click
@@ -43,6 +39,11 @@
   </div>
   <div class="right section">
     <div class="top sub-section">
+      <h4>Other Supermarkets:</h4>
+      <% @other_ones.each do |f| %>
+        <h6><%= f.supermarket.name %></h6>
+        <p><%= f.price %></p>
+      <% end %>
     </div>
   </div>
 </div>
