@@ -1,0 +1,4 @@
+<%= simple_form_for @user_product do |f| %>
+  <%= f.input :product_id, as: :hidden, :input_html => { :value => @product.id } %>
+  <%= f.submit "here", class: "btn" %>
+<% end %>
