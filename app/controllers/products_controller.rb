@@ -15,4 +15,5 @@ class ProductsController < ApplicationController
     @product = Product.find (params[:id])
     @other_ones = Product.where(name: @product.name).reject{|r| r == @product}
   end
+
 end
