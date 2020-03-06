@@ -1,17 +1,25 @@
 
 <div class="product-container">
   <div class="left-section">
-    <h1> Your Product in Your Area
-    <%= image_tag @product.image, alt: "alttext" %>
-    <h2><%= @product.name %></h2>
+    <h1> Your Product in Your Area</h1>
 
-    <div class="">
-      <h5><%= @product.supermarket.name %></h5><p><%= @product.price %></p>
+
+    <div class="product-show-card">
+      <div class="product-show-details">
+        <div class="product-show-header">
+          <h2><%= @product.name %></h2>
+        </div>
+        <h5><%= @product.supermarket.name %></h5>
+        <%= @product.price %>
+        <br>
+        <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
+          Create a Price Alert!
+        </button>
+      </div>
+      <%= image_tag @product.image, alt: "alttext", class: "product-show-image" %>
     </div>
 <!-- Button trigger modal -->
-    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
-      Create a Price Alert!
-    </button>
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -39,14 +47,78 @@
   </div>
   <div class="right section">
     <div class="top sub-section">
-      <h4>Other Supermarkets:</h4>
-      <% @other_ones.each do |f| %>
-        <h6><%= f.supermarket.name %></h6>
-        <p><%= f.price %></p>
-      <% end %>
+
+      <h4><strong>Other Supermarkets</strong></h4>
+      <div class="other-products">
+        <% @other_ones.each do |other| %>
+          <div class="other-product">
+            <%= link_to product_path(other) do %>
+              <div class="details">
+                <h6><%= other.supermarket.name %></h6>
+                <p><%= other.price %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<%= link_to "Back to all products", products_path, class: "btn" %>
+
+<style>
+  .product-show-card {
+    transition: ease-in-out 0.5s;
+    margin-top: 25px;
+    display: flex;
+    background: white;
+    padding: 15px;
+    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+  }
+
+  .product-show-card:hover {
+    transition: ease-in-out 0.5s;
+    -webkit-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
+  }
+
+  .product-show-button {
+    margin-top: 50px;
+  }
+
+  .other-product {
+    border: 1px transparent;
+    transition: ease-in-out 0.5s;
+    margin-top: 3px;
+    display: flex;
+    background: white;
+    padding: 5px;
+    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+  }
+
+  .other-product a {
+    text-decoration: none;
+  }
+
+  .other-product:hover {
+    border-left: 2px solid #ef5b5b;
+    border-right: 2px solid #ef5b5b;
+    transition: ease-in-out 0.5s;
+    -webkit-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+  }
+
+  .other-product:first-child {
+    margin-top: 45px;
+  }
+</style>
 <!--
 PSEUDO CODE
 
