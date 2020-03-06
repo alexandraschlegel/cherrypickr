@@ -93,7 +93,7 @@ end
 
 
 
-
+puts "successful seed!"
 
 # iceland = Supermarket.create!(name: "Iceland", website: "https://www.iceland.co.uk")
 
