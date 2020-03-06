@@ -6,13 +6,13 @@
 
     <div class="product-show-card">
       <div class="product-show-details">
-        <div class="product-show-header">
+        <div class="product-show-header mb-4">
           <h2><%= @product.name %></h2>
         </div>
         <h5><%= @product.supermarket.name %></h5>
-        <%= @product.price %>
+        <h5><%= @product.price %></h5>
         <br>
-        <div class="flex-box">
+        <div class="flex-box mt-5">
         <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
           Create a Price Alert!
         </button>
@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="right section">
+  <div class="right section mr-5">
     <div class="top sub-section">
 
       <h4><strong>Other Supermarkets</strong></h4>
@@ -56,9 +56,9 @@
         <% @other_ones.each do |other| %>
           <div class="other-product">
             <%= link_to product_path(other) do %>
-              <div class="details">
-                <h6><%= other.supermarket.name %></h6>
-                <p><%= other.price %></p>
+              <div class="details ml-2 mt-2">
+                <h5><strong><%= other.supermarket.name %></strong></h5>
+                <p><strong><%= other.price %></strong></p>
               </div>
             <% end %>
           </div>
@@ -91,7 +91,7 @@
   }
 
   .product-show-button {
-    margin-top: 20px;
+/*    margin-top: 20px;*/
      border-radius: 10px;
   }
 
@@ -129,6 +129,24 @@
     border-radius: 12px;
     color:#95A5B8;
   }
+
+.product-show-details h2 {
+  color: #95A5B8;
+}
+
+.product-show-details h5 {
+  color: #95A5B8;
+}
+
+.top h4 {
+  color: #ffffff;
+}
+
+.modal-header h5 {
+  color: #95A5B8;
+}
+
+
 </style>
 <!--
 PSEUDO CODE
