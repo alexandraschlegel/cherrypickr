@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <h1 style="margin-left: 0px; margin-top: 20px; margin-bottom: 25px">Your Products</h1>
+    <h2 style="margin-left: 0px; margin-top: 32px; margin-bottom: 32px">Your Products</h2>
   </div>
   <div class="row">
     <% @products.each do |product| %>
@@ -8,11 +8,11 @@
       <div class="col-md-3">
         <div class="card-index mb-3 p-3" style="border-radius:10px">
           <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
-            <p class="mb-2" style="width: 170px"><%= product.name%></p>
+            <p class="mb-2 ml-4" style="width: 170px"><%= product.name%></p>
 <!--             <p class="mb-2" style="width: 170px"><%= product.supermarket.name%></p> -->
-            <p><strong>Price from:</strong> <strong><%=product.price%></strong>
+            <p class="ml-4 mb-1" ><strong>Price from:</strong> <strong><%=product.price%></strong>
             <div>
-              <%= link_to "View Prices", product_path(product), class: "btn btn-primary rounded mt-3"%>
+              <%= link_to "View Prices", product_path(product), class: "btn btn-primary rounded mt-3 mb-1"%>
             </div>
           </div>
       </div>
