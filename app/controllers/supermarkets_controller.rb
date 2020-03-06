@@ -1,6 +1,11 @@
 class SupermarketsController < ApplicationController
   def show
-    @Supermarket = Supermarket.find (params[:id])
-  end
+    @supermarket = Supermarket.find (params[:id])
 
+
+
+    @markers = {  lat: @supermarket.latitude,
+                  lon: @supermarket.longitude
+               }
+  end
 end
