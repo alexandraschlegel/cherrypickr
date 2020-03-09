@@ -1,3 +1,4 @@
+
 <div class="card">
 
   <div class="card-body">
@@ -8,5 +9,24 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
+<div class="card-h">
+
+
+  <div class="card-h-body">
+  <h1> Directions to </h1>
+  <%= image_tag "Sainsburys.png", alt: "alttext" %>
+  </div>
+  <div class="card-h-map">
+  <%= image_tag "map.png", alt: "alttext"%>
   </div>
 </div>
+
+<style>
+  .card-h-body h1 {
+    font-family: Quicksand;
+    font-weight: bolder;
+  }
+
+
+
+</style>

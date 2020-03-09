@@ -38,41 +38,12 @@ end
 end
 
 
-
-aldi = Supermarket.create!(name: "Aldi", website: "https://www.aldi.co.uk")
-
-url = "https://www.aldi.co.uk/c/groceries/frozen-food/ice-cream-and-desserts"
-doc = Nokogiri::HTML(open(url))
-doc.search(".category-item__wrapper-link").each do |result_card|
-  doc2 = Nokogiri::HTML(open(result_card.attr('href')))
-  prod_name = doc2.search(".product-details__name").text
-  price = "£ " + doc2.search(".product-price__value").text.strip
-  image_src = doc2.search(".product-image-viewer-section__large").search("img").attr('src').value
-  Product.create!(supermarket: aldi, image: image_src, price: price, name: prod_name)
-end
-
-morrisons = Supermarket.create!(name: "Morrisons", website: "https://groceries.morrisons.com")
-mor_urls = ["https://groceries.morrisons.com/search?entry=ben%20and%20jerrys", "https://groceries.morrisons.com/search?entry=ice%20cream"]
-
-mor_urls.each do |url|
-  doc = Nokogiri::HTML(open(url))
-  doc.search(".fop-contentWrapper").each do |result_card|
-    prod_name = result_card.search(".fop-title").text
-    price = result_card.search(".fop-price").text
-  # p size = result_card.search(".fop-catch-weight").text
-    image_src = result_card.search(".fop-img").attr('src').value
-  Product.create!(supermarket: morrisons, image: image_src, price: price, name: prod_name)
-  end
-end
-
-
-waitrose = Supermarket.create!(name: "waitrose", website: "https://www.waitrose.com")
+waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
 seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
-{price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'},
-{price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
+{price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
 {price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£2.05', name: 'Rude Health oat drink'}, {price: '£2.00', name: 'Plenish Oat+ Enriched'},
 {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.55', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£1.45', name: 'Alpro Oat Drink Alternative 1 Litre'}]
+{price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'}]
  seed_products.each do |seed_product|
   if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -81,13 +52,12 @@ seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1
 end
 
 
-sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsburys.com")
+sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
 seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
-{price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'},
-{price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
+{price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
 {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
 {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'}]
+{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}]
   seed_products_2.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -123,7 +93,7 @@ end
 
 
 
-
+puts "successful seed!"
 
 # iceland = Supermarket.create!(name: "Iceland", website: "https://www.iceland.co.uk")
 
