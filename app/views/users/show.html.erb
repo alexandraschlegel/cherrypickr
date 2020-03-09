@@ -25,8 +25,11 @@
   <div class="container">
 
     <div class="profile-page">
-      <h3>Your Product Watchlist</h3>
+      <h3>Your Alerts</h3>
     </div>
+      <div class="container">
+      <%= render 'edit', user: @user %>
+      </div>
         <div class="flex-box">
         <div class="row">
           <% @products.each do |product| %>
@@ -45,6 +48,53 @@
         </div>
         </div>
   </div>
+
+
+<% form_tag delete_mutiple_items_path do %>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @supermarkets.each do |supermarket| %>
+      <tr>
+        <td><%= check_box_tag "[]", supermarket.id %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= submit_tag "delete Checked" %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,35 +2,22 @@
   <div class="header">
     <h1 style="margin-top: -88px"><strong>COMPARE SUPERMARKET PRICES </strong></h1>
     <h1 style="margin-bottom: 24px"><strong>IN YOUR LOCAL AREA </strong></h1>
-    <h3><strong> GET YOUR PRICE ALERT NOW </strong></h3>
+    <script src='typed.js'></script>
+    <div id="typed">
+      <h3><strong> GET YOUR PRICE ALERT NOW </strong></h3>
+    </div>
   </div>
-
-  <div class="searchbox">
-    <%= form_tag products_path, method: :get, class: "search-form" do %>
-
+  <%= form_tag products_path, method: :get, class: "search-form" do %>
+    <div class="search-boxes-inline d-flex">
       <%= text_field_tag :product,
         params[:product],
-        class: "input100",
+        class: "home-search-button typed",
         placeholder: "Enter Product"
       %>
 
-      <div class="dflex">
-        <%= text_field_tag :postcode,
-            params[:postcode],
-            class: "input50",
-            placeholder: "Enter Postcode"
-        %>
-
-        <%= text_field_tag :range,
-            params[:range],
-            class: "input50",
-            placeholder: "Enter range"
-        %>
-      </div>
-
-      <%= submit_tag "SEARCH", class: "input100 cherry-btn" %>
-      <% end %>
-  </div>
+      <%= submit_tag "Go", class: "btn cherry-btn" %>
+    </div>
+  <% end %>
 </div>
 
 

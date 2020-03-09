@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_145215) do
+ActiveRecord::Schema.define(version: 2020_03_09_171130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "branches", force: :cascade do |t|
+    t.string "address"
+    t.string "longitude"
+    t.string "latitude"
+    t.bigint "supermarket_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["supermarket_id"], name: "index_branches_on_supermarket_id"
+  end
 
   create_table "deals", force: :cascade do |t|
     t.bigint "supermarket_id", null: false
@@ -64,10 +74,13 @@ ActiveRecord::Schema.define(version: 2020_03_04_145215) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location", default: "Leicester Square, London"
+    t.integer "distance", default: 2
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "branches", "supermarkets"
   add_foreign_key "deals", "products"
   add_foreign_key "deals", "supermarkets"
   add_foreign_key "products", "supermarkets"
