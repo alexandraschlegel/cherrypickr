@@ -1,10 +1,33 @@
 
-.card-index {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//previous version without hover effect
+// .card-index {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 20px;
+// }
 
-}
+  .card-index:hover {
+    border-radius: 20px;
+    // border-left: 2px solid #95A5B8;
+    // border-right: 2px solid #95A5B8;
+    transition: ease-in-out 0.5s;
+    -webkit-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
+  }
+
+ .card-index {
+    border: 1px transparent;
+    transition: ease-in-out 0.5s;
+    margin-top: 3px;
+    // display: flex;
+    background: white;
+    padding: 5px;
+    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+  }
 
 
 .card-index > img {
@@ -12,6 +35,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  max-width: fit-content;
+
 }
 
 
@@ -27,6 +52,7 @@
 .prod-img {
   width: 250px;
   height: 250px;
+  display: flex;
 }
 
 .card-h{
@@ -77,6 +103,11 @@
   text-align: center;
   color: #95A5B8;
   margin-top: 20px;
+}
+
+.details img {
+   width: 80px;
+  transform: rotate(90deg);
 }
 
 
