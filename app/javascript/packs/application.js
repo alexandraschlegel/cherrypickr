@@ -3,4 +3,3 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
-
