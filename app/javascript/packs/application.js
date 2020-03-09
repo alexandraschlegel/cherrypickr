@@ -4,6 +4,7 @@ require("channels")
 
 import "bootstrap";
 
+
 import Typed from 'typed.js';
 
 let check = document.querySelector(".typed")
@@ -19,3 +20,4 @@ import { initMapbox } from '../plugins/init_mapbox';
 console.log(initMapbox)
 
 initMapbox();
+

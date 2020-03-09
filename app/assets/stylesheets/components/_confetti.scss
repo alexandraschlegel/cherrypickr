@@ -9,26 +9,31 @@
   transition: all ease-in-out 0.5s;
   background-repeat: no-repeat;
 }
+
 .modal-confetti:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, #6dc25a 20%, transparent 20%), radial-gradient(circle, transparent 20%, #2cb34a 20%, transparent 30%), radial-gradient(circle, #2cb34a 20%, transparent 20%), radial-gradient(circle, #2cb34a 20%, transparent 20%), radial-gradient(circle, transparent 10%, #6dc25a 15%, transparent 20%), radial-gradient(circle, #6dc25a 20%, transparent 20%), radial-gradient(circle, #6dc25a 20%, transparent 20%), radial-gradient(circle, #bee461 20%, transparent 20%), radial-gradient(circle, #bee461 20%, transparent 20%);
   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 }
+
 .modal-confetti:after {
   display: none;
   bottom: -75%;
   background-image: radial-gradient(circle, #2cb34a 20%, transparent 20%), radial-gradient(circle, #bee461 20%, transparent 20%), radial-gradient(circle, transparent 10%, #bee461 15%, transparent 20%), radial-gradient(circle, #bee461 20%, transparent 20%), radial-gradient(circle, #bee461 20%, transparent 20%), radial-gradient(circle, #2cb34a 20%, transparent 20%), radial-gradient(circle, #2cb34a 20%, transparent 20%);
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 }
+
 .modal-confetti:active {
   transform: scale(0.9);
   background-color: #6dc25a;
 }
+
 .modal-confetti.animate:before {
   display: block;
   animation: topBubbles ease-in-out 0.75s forwards;
 }
+
 .modal-confetti.animate:after {
   display: block;
   animation: bottomBubbles ease-in-out 0.75s forwards;
@@ -57,6 +62,3 @@
    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
-
-
-
