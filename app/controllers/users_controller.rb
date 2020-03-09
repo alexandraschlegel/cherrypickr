@@ -3,8 +3,22 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @products = @user.products
-  end
 
+    if params[:query].present?
+      # params[:query] = "Tesco"
+      # initial_branches = Branch.where(supermarket: Supermarket.find_by_name(params[:query]))
+      # @branches = initial_branches.where.not(latitude: nil).or.not(longitude: nil)
+    else
+      @branches = Branch.geocoded
+
+      @markers = @branches.map do |sprmkrt|
+        {
+          lat: sprmkrt.latitude,
+          lng: sprmkrt.longitude
+        }
+      end
+    end
+  end
 
   def edit
     @user = current_user
