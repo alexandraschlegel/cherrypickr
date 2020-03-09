@@ -1,7 +1,9 @@
 class Supermarket < ApplicationRecord
   has_many :products
   has_many :deals
+  has_many :branches
 
-  geocoded_by :address
-  after_validation :geocode
+  def self.all_branches
+    self.all.map(&:branches)
+  end
 end

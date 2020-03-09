@@ -18,10 +18,28 @@
 }
 .input100 {
   width: calc(100% - 24px);
-  margin: 10px;
-  border-radius: 8px;
-  padding: 8px;
+  background: rgba(255, 255, 255, 0);
+  background-color: none;
+  border: none;
+  border-bottom: 4px solid;
+  line-height: 24px;
+  font-size: 24px;
 }
+
+.home-search-button {
+  width: calc(48% - 24px);
+  background: rgba(255, 255, 255, 0);
+  background-color: none;
+  border: none;
+  border-bottom: 4px solid;
+  line-height: 24px;
+  font-size: 24px;
+  &:focus{
+    outline: none;
+  }
+  margin: 5px;
+}
+
 .search-form {
   padding: 20px;
   padding-bottom: 32px;
