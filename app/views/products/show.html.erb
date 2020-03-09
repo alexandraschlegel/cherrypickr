@@ -210,7 +210,7 @@ end
         <p><strong><%= @product.price %></strong></p><h5> BEST OFFER </h5>
         </div>
         <div class="flex-box mt-5 mb-2">
-        <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
+        <button type="button" class="btn product-show-button toogle-confetti" data-toggle="modal" data-target="#exampleModalLong">
           Create a Price Alert!
         </button>
         <%= link_to "Get Directions", supermarket_path(@product.supermarket), class: "btn product-show-button" %>
@@ -222,7 +222,7 @@ end
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-confetti" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5>
