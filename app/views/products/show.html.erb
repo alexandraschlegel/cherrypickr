@@ -1,10 +1,9 @@
 
 <div class="product-container">
   <div class="left-section">
-    <h3> Your Product in Your Area</h3>
-
 
     <div class="product-show-card">
+       <h3> Your Product in Your Area</h3>
       <%= image_tag @product.image, alt: "alttext" %>
       <div class="product-show-details">
         <div class="product-show-header">
@@ -32,6 +31,7 @@
           <div class="modal-header">
             <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
            <h5>CONGRATULATIONS</h5>
+             <%= image_tag @product.image, alt: "alttext" %>
             <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -94,8 +94,8 @@
     -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
     box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
     color: #6D7D90;
-    height: 383px;
-    width: 660px;
+    height: 850px;
+    width: 1140px;
   }
 
   .product-show-card:hover {
@@ -224,6 +224,9 @@
 .modal-body {
   text-align: center;
   width: 100%;
+}
+.product-show-container h3{
+ color:
 }
 
 
