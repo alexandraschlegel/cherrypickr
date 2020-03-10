@@ -5,10 +5,33 @@ Product.destroy_all
 Supermarket.destroy_all
 Branch.destroy_all
 
+
 # Supermarkets
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com")
 waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
 sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+
+# base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
+
+# 10.times do |i|
+#   page_number = i + 1
+#   page = "?page=#{page_number}"
+#   url = base_url + page + "&count=48"
+#   doc = Nokogiri::HTML(open(url))
+#   doc.search(".tile-content").each do |result_card|
+#     name = result_card.search(".sc-Rmtcm bovboR").text
+#     price = result_card.search(".price-per-sellable-unit").text
+#     Product.create!(name: name, price_cents: price.split.last.to_f, supermarket_id: Supermarket.first.id)
+#   end
+# endtesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com")
+ # Tesco
+
+
+tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: "tesco.png")
+tesco_urls = ["https://www.tesco.com/groceries/en-GB/search?query=ben%20and%20jerrys", "https://www.tesco.com/groceries/en-GB/search?query=ice%20cream", "https://www.tesco.com/groceries/en-GB/search?query=oat%20milk", 'https://www.tesco.com/groceries/en-GB/search?query=oats']
+tesco_urls.each do |url|
+ # Tesco
+
 
 # Dairy products
 ## TESCO
@@ -53,7 +76,6 @@ seed_products.each do |seed_product|
     Product.create(supermarket: waitrose, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
-
 ## SAINSBURYS
 seed_products_2 = [
   {price: '£1.80', name: 'Oatly Foamable 1 Litre'},
@@ -313,7 +335,6 @@ end
 #      Product.create(supermarket: Asda, price: seed_product[:price], name: seed_product[:name])
 #    end
 # end
-
 
 # waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
 # seed_products_11 = [{price: '£27.00', name: 'Bombay Sapphire gin'},

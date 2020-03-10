@@ -1,10 +1,9 @@
 
 <div class="product-container">
   <div class="left-section">
-    <h3> Your Product in Your Area</h3>
-
 
     <div class="product-show-card">
+       <h3> Your Product in Your Area</h3>
       <%= image_tag @product.image, alt: "alttext" %>
       <div class="product-show-details">
         <div class="product-show-header">
@@ -28,18 +27,24 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog modal-confetti" role="document">
-        <div class="modal-content border-radius=12px">
-          <div class="modal-header border-radius=12px">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5>
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
+           <h5>CONGRATULATIONS</h5>
+             <%= image_tag @product.image, alt: "alttext" %>
+
             <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body border-radius=12px">
             <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
-              I am already on your <%= link_to "watchlist", user_path(current_user) %>!
+
+              I am already on your <br>
+              <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
+
               <br>
-              You can find me at your nearest <%= link_to '@product.supermarket.name', supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
+              You can find me at your nearest <%= link_to @product.supermarket.name, supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
             <% else %>
               You can find me at your nearest <%= @product.supermarket.name %>, or click
               <%= #render "user_products/form" %>
@@ -61,10 +66,11 @@
               <div class="flex-box">
               <div class="details">
                   <div style="margin-top: 20px">
-                  <%= image_tag "Sainsburys.png", alt: "alttext" %>
+                  <%= image_tag other.supermarket.image, alt: "alttext" %>
                   </div>
                   <div class="other-details">
                   <h6><strong><%= @product.name %></strong></h6>
+                  <p><strong><%= other.supermarket.name %></strong></p>
                   <p><strong><%= other.price %></strong></p>
                 </div>
                 </div>
@@ -91,8 +97,8 @@
     -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
     box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
     color: #6D7D90;
-    height: 383px;
-    width: 660px;
+    height: 850px;
+    width: 1140px;
   }
 
   .product-show-card:hover {
@@ -199,6 +205,31 @@
   height: 200px;
   display: flex;
   margin-top: 40px;
+}
+
+.modal-content {
+  width: 420px;
+  height: 500px;
+  margin-top: 100px;
+  border-radius: 16px;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-header h5 {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-top: 200px;
+
+.modal-body {
+  text-align: center;
+  width: 100%;
+}
+.product-show-container h3{
+ color:
 }
 
 
