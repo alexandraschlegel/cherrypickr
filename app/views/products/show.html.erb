@@ -1,51 +1,36 @@
-<div class="product-container">
-  <div class="left-section">
-    <h3> Your Product in Your Area</h3>
-    <div class="product-show-card">
-      <%= image_tag @product.image, alt: "alttext" %>
-      <div class="product-show-details">
-        <div class="product-show-header">
-          <h4><%= @product.name %></h4>
-        </div>
-        <h5>Currently on sale at <%= @product.supermarket.name %></h5>
-        <div class="flex-box">
-        <p><strong><%= @product.price %></strong></p><h5> BEST OFFER </h5>
-        </div>
-        <div class="flex-box mt-5 mb-2">
-        <button type="button" class="btn product-show-button toogle-confetti" data-toggle="modal" data-target="#exampleModalLong">
-          Create a Price Alert!
-        </button>
-        <%= link_to "Get Directions", supermarket_path(@product.supermarket), class: "btn product-show-button" %>
+
+
+<div class="custom-container">
+  <div class="product-container">
+    <h3> Your Product, in your area</h3>
+
+    <div class="product-wrapper">
+      <!-- left section -->
+      <div class="product-image">
+        <%= image_tag @product.image, alt: "alttext" %>
       </div>
-      </div>
-    </div>
-<%= link_to "Back to all products", products_path, class: "btn mt-5" %>
-<!-- Button trigger modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog modal-confetti" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
-           <h5>CONGRATULATIONS</h5>
-            <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
+      <!-- middle section -->
+      <div class="product-show-card">
+        <div class="product-show-details">
+          <h4 class="product-show-header"><%= @product.name %></h4>
+          <img class="supermarket-logo" src="" alt="">
+          <span class="product-price">£2.99</span>
+
+          <div class="product-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus in harum autem quas mollitia, unde, aliquam pariatur consectetur architecto nesciunt numquam vitae, optio possimus doloribus perferendis. Iusto dolorem commodi nesciunt.
+
           </div>
-          <div class="modal-body">
-            <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
-              I am already on your <br>
-              <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
-              <br>
-              You can find me at your nearest <%= link_to @product.supermarket.name, supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
-            <% else %>
-              You can find me at your nearest <%= @product.supermarket.name %>, or click
-              <%= render "user_products/form" %>
-               to get notified when my price changes!
-            <% end %>
-          </div>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn-2" data-toggle="modal" data-target="#exampleModalLong">
+            SET A PRICE ALERT!
+          </button>
         </div>
       </div>
+      <!-- right section -->
+      <div class="product-map">
+        <%= image_tag "/assets/map.png", alt: "alttext"  %>
     </div>
   </div>
   <div class="right section">
@@ -70,132 +55,47 @@
             <% end %>
           </div>
         <% end %>
+
+     <div class="bottom-section">
+      <h6> OTHER DETAILS AVALIABLE</h6>
+
+      <div class="other-products-wrapper">
+        <div class="card-left">
+        </div>
+        <div class="card-middle">
+
+        </div>
+        <div class="card-right">
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-confetti" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
+       <h5>CONGRATULATIONS</h5>
+         <%= image_tag "/assets/celebration.png", alt: "alttext",  class: "confetti" %>
+        <button type="button" class="pop-btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
+          Your Price alert is all set <br>
+          <%= link_to "watchlist", user_path(current_user), class: "btn"  %>!
+          <br>
+        <% else %>
+          <%= @product.supermarket.name %>,
+          <%= render "user_products/form" %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-<style>
-  .product-show-card {
-    border-radius: 20px;
-    transition: ease-in-out 0.5s;
-    margin-top: 25px;
-    display: flex;
-    background: white;
-    padding: 15px;
-    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    color: #6D7D90;
-    height: 383px;
-    width: 660px;
-  }
-  .product-show-card:hover {
-    transition: ease-in-out 0.5s;
-    -webkit-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-  }
-  .product-show-button {
-/*    margin-top: 20px;*/
-     border-radius: 10px;
-     margin-top: 32px;
-     margin-right: 5px;
-     margin-bottom: 20px;
-  }
-  .product-show-button:hover {
-    color: green;
-  }
-  .other-product {
-    border: 1px transparent;
-    transition: ease-in-out 0.5s;
-    margin-top: 3px;
-    display: flex;
-    background: white;
-    padding: 5px;
-    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-  }
-  .other-product a {
-    text-decoration: none;
-  }
-  .other-product:hover {
-    border-radius: 30px;
-    border-left: 2px solid #ef5b5b;
-    border-right: 2px solid #ef5b5b;
-    transition: ease-in-out 0.5s;
-    -webkit-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-  }
-  .other-product:first-child {
-    margin-top: 10px;
-  }
-  .modal-body{
-    border-radius: 12px;
-    color:#6D7D90;
-  }
-.product-show-header {
-  margin-bottom: 20px;
-  margin-top: 60px;
-  }
-.product-show-header h4 {
-  font-size: 20px;
-  color: #6D7D90;
-  font-weight: bold;
-}
-.product-show-details p {
-  font-size: 20px;
-  color: #6D7D90;
-}
-.product-show-details {
-  margin-left: 32px;
-}
-.top h4 {
-    color: #6D7D90;
-    margin-top: -14px;
-    margin-bottom: 32px;
-}
-.modal-header h5 {
-  color: #6D7D90;
-}
-.details img {
-  margin: inherit;
-}
-.other-details {
-  margin-left: 100px;
-  margin-top: -40px;
-}
-.product-show-card > img {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  margin-top: 40px;
-}
-.modal-content {
-  width: 420px;
-  height: 500px;
-  margin-top: 100px;
-  border-radius: 16px;
-}
-.modal-header {
-  border: none;
-}
-.modal-header h5 {
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  margin-top: 200px;
-.modal-body {
-  text-align: center;
-  width: 100%;
-}
-</style>
-
-
-
-
-
 
 
 
