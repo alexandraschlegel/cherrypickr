@@ -1,81 +1,64 @@
-  <div class="container">
+<div class="container">
 
-    <div class="profile-page">
-      <h3>Your Alerts</h3>
-    </div>
-      <div class="container">
+  <div class="profile-page">
+    <h3>Your Alerts</h3>
+  </div>
+    <div class="container-profile">
       <%= render 'edit', user: @user %>
-      </div>
-        <div class="flex-box">
+        <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
+          <div class="search-boxes-inline d-flex">
+           <%= text_field_tag :query,
+            params[:query],
+            placeholder: "Enter Supermarket"
+            %>
+            <% end %>
+          </div>
+        <div class ="container" id="map"
+          style="width: 40%;
+          border-radius: 10px;
+          height: 500px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
+      <div>
+    </div>
+      <div class="flex-box">
         <div class="row">
           <% @products.each do |product| %>
             <div class="col-md-3">
               <div class="card-index mb-3 p-3" style="border-radius:20px">
                 <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
-                    <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
+                  <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
         <!--             <p class="mb-2" style="width: 170px"><%= product.supermarket.name%></p> -->
-                    <p class="text-center mb-3" ><strong>Price from:</strong> <strong><%=product.price%></strong>
+                  <p class="text-center mb-3"><strong>Price from:</strong> <strong><%=product.price%></strong>
                     <div class="text-center">
                     <%= link_to "View Details", product_path(product), class: "btn btn-primary rounded my-2 mr-5"%>
                     </div>
               </div>
             </div>
-          <% end %>
-        </div>
-        </div>
-  </div>
-  <div>
-  <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
+           <% end %>
+         </div>
+      </div>
+     </div>
+<div>
+ <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
     <div class="search-boxes-inline d-flex">
       <%= text_field_tag :query,
         params[:query],
         placeholder: "Enter Supermarket"
       %>
-  <% end %>
-  </div>
-  <div class ="container" id="map"
+     <% end %>
+    </div>
+    <div class ="container" id="map"
        style="width: 40%;
        border-radius: 10px;
        height: 500px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  </div>
+    </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%# form_tag delete_mutiple_items_path do %>
-<!--   <table>
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%# @supermarkets.each do |supermarket| %>
-      <tr>
-        <td><%#= check_box_tag "[]", supermarket.id %></td>
-      </tr>
-      <%# end %>
-    </tbody>
-  </table> -->
-  <%#= submit_tag "delete Checked" %>
-<%# end %>
 
 
 
