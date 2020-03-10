@@ -4,7 +4,7 @@ require "nokogiri"
 Product.destroy_all
 Supermarket.destroy_all
 Branch.destroy_all
-
+#
 
 # Supermarkets
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
