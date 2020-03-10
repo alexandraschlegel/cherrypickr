@@ -25,7 +25,7 @@
         </div>
   </div>
   <div>
-  <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
+  <%= form_tag user_path(current_user) , method: :get, class: "search-form" do %>
     <div class="search-boxes-inline d-flex">
       <%= text_field_tag :query,
         params[:query],
