@@ -284,16 +284,6 @@ seed_products_11.each do |seed_product|
   end
 end
 
-
-
-
-
-
-
-
-
-
-
 # # sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsburys.com")
 # Product.create!(supermarket: sainsburys, image: image_src, price: '£1.80', name: 'Oatly Foamable 1 Litre')
 # Product.create!(supermarket: sainsburys, image: image_src, price: '', name: 'Oatly Oat Drink Whole 1 Litre')

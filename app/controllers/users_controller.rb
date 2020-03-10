@@ -6,9 +6,8 @@ class UsersController < ApplicationController
 
     if params[:query].present?
       # params[:query] = "Tesco"
-      # initial_branches = Branch.where(supermarket: Supermarket.find_by_name(params[:query]))
-      # @branches = initial_branches.where.not(latitude: nil).or.not(longitude: nil)
-    else
+      initial_branches = Branch.where(supermarket: Supermarket.find_by_name(params[:query]))
+      @branches = initial_branches.where.not(latitude: nil)
       @branches = Branch.geocoded
 
       @markers = @branches.map do |sprmkrt|
