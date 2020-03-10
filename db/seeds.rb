@@ -20,7 +20,7 @@ Supermarket.destroy_all
  # Tesco
 
 
-tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com")
+tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: "tesco.png")
 tesco_urls = ["https://www.tesco.com/groceries/en-GB/search?query=ben%20and%20jerrys", "https://www.tesco.com/groceries/en-GB/search?query=ice%20cream", "https://www.tesco.com/groceries/en-GB/search?query=oat%20milk", 'https://www.tesco.com/groceries/en-GB/search?query=oats']
 tesco_urls.each do |url|
  # Tesco
@@ -38,7 +38,7 @@ end
 end
 
 
-waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
+waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image: "waitrose.png")
 seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
 {price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
 {price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£2.05', name: 'Rude Health oat drink'}, {price: '£2.00', name: 'Plenish Oat+ Enriched'},
@@ -54,7 +54,7 @@ end
 
 
 
-sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image: "Sainsburys.png")
 seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
 {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
 {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
@@ -69,7 +69,7 @@ end
 
 #OAT PRODUCTS
 
-sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image: "Sainsburys.png")
 seed_products_3 = [{price: '£0.75', name: 'Growers Harvest Porridge Oats'}, {price: '£1.00', name: 'Quaker Oat So Simple Golden Syrup Porridge 57G'},
 {price: '£1.00', name: 'Kelloggs Crunchy Nut Chocolate Oat Granola 380G'}, {price: '£1.10', name: 'Oat & Barley Loaf 800G'}, {price: '£2.99', name: 'Quaker Oat Granola Raisin 500G'}, {price: '£2.60', name: 'Activia Grains & Nuts Walnuts & Oats Yogurt 4X120g'}, {price: '£2.50', name: 'Nescafe Gold Oat Latte (6X16g) Gb'},
 {price: '£2.60', name: 'Nestle Cheerios Oat Low Sugar Cereal 325G'}, {price: '£3.00', name:'Jordans Crunchy Oat Tropical Fruits Granola 750G'}, {price: '£1.50', name: 'Nomadic Oats Chocolate & Natural Yogurt 169G'},
@@ -87,7 +87,7 @@ seed_products_3 = [{price: '£0.75', name: 'Growers Harvest Porridge Oats'}, {pr
   end
 end
 
- waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
+ waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image: "waitrose.png")
 seed_products_4 = [{price: '£0.95', name: 'Growers Harvest Porridge Oats'}, {price: '£2.15', name: 'Quaker Oat So Simple Golden Syrup Porridge 57G'},
 {price: '£2.20', name: 'Kelloggs Crunchy Nut Chocolate Oat Granola 380G'}, {price: '£1.30', name: 'Oat & Barley Loaf 800G'}, {price: '£2.99', name: 'Quaker Oat Granola Raisin 500G'}, {price: '£2.60', name: 'Activia Grains & Nuts Walnuts & Oats Yogurt 4X120g'},  {price: '£2.50', name: 'Nescafe Gold Oat Latte (6X16g) Gb'},
 {price: '£3.10', name: 'Nestle Cheerios Oat Low Sugar Cereal 325G'}, {price: '£3.50', name:'Jordans Crunchy Oat Tropical Fruits Granola 750G'}, {price: '£1.80', name: 'Nomadic Oats Chocolate & Natural Yogurt 169G'},
@@ -125,7 +125,7 @@ end
 
 #SHAMPOO
 
-waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
+waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image: "waitrose.png")
 seed_products_6 = [{price: '£2.75', name: 'Tresemme Rich Luxurious Moisture Shampoo 900Ml'},
  {price: '£3.50', name: 'Ogx Moroccan Argan Oil Shampoo 385Ml'}, {price: '£2.75', name: 'Tresemme Deep Cleansing Shampoo'},
 {price: '£2.75', name: 'Pantene Smooth & Sleek'}, {price: '£4.00', name: 'Garnier Ultimate Blends Coconut Oil Shampoo Frizzy Hair 360Ml'},
@@ -142,7 +142,7 @@ seed_products_6 = [{price: '£2.75', name: 'Tresemme Rich Luxurious Moisture Sha
 {price: '£5.50', name: 'Loreal Elvive Men'}, {price: '£2.00', name: 'Vosene Mens Anti'}]
   seed_products_6.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
-    image_src = Product.where(name: seed_product[:name])[0].image
+    # image_src = Product.where(name: seed_product[:name])[0].image
     Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
@@ -165,12 +165,12 @@ seed_products_7 = [{price: '£2.75', name: 'Tresemme Rich Luxurious Moisture Sha
 {price: '£5.50', name: 'Loreal Elvive Men'}, {price: '£1.00', name: 'Vosene Mens Anti'}]
   seed_products_7.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
-    image_src = Product.where(name: seed_product[:name])[0].image
+    # image_src = Product.where(name: seed_product[:name])[0].image
     Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
 
-sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsbury.com")
+sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsbury.com", image: "Sainsburys.png")
 seed_products_8 = [{price: '£2.75', name: 'Tresemme Rich Luxurious Moisture Shampoo 900Ml'},
  {price: '£4.00', name: 'Ogx Moroccan Argan Oil Shampoo 385Ml'},{price: '£2.75', name: 'Tresemme Deep Cleansing Shampoo'},
 {price: '£3.50', name: 'Pantene Smooth & Sleek'},{price: '£4.00', name: 'Garnier Ultimate Blends Coconut Oil Shampoo Frizzy Hair 360Ml'},
@@ -187,7 +187,7 @@ seed_products_8 = [{price: '£2.75', name: 'Tresemme Rich Luxurious Moisture Sha
 {price: '£5.50', name: 'Loreal Elvive Men'},{price: '£3.00', name: 'Vosene Mens Anti'}]
   seed_products_8.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
-    image_src = Product.where(name: seed_product[:name])[0].image
+    # image_src = Product.where(name: seed_product[:name])[0].image
     Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
@@ -196,7 +196,7 @@ end
 
 
 
-sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image: "Sainsburys.png")
 seed_products_9 = [{price: '£21.40', name: 'Bombay Sapphire gin'},
 {price: '£14.00', name: 'Gordons Special Dry London Gin'},
 {price: '£21.00', name: 'Haymans London Dry Gin'},
@@ -219,7 +219,7 @@ seed_products_9 = [{price: '£21.40', name: 'Bombay Sapphire gin'},
 {price: '£46.00', name: 'The Botanist Islay Dry Gin'}]
 seed_products_9.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
-    image_src = Product.where(name: seed_product[:name])[0].image
+    # image_src = Product.where(name: seed_product[:name])[0].image
     Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
@@ -250,13 +250,13 @@ seed_products_10 = [{price: '£16.00', name: 'Bombay Sapphire gin'},
 {price: '£40.00', name: 'The Botanist Islay Dry Gin'}]
 seed_products_10.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
-    image_src = Product.where(name: seed_product[:name])[0].image
+    # image_src = Product.where(name: seed_product[:name])[0].image
     Product.create(supermarket: Asda, image: image_src, price: seed_product[:price], name: seed_product[:name])
   end
 end
 
 
-waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
+waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image: "waitrose.png")
 seed_products_11 = [{price: '£27.00', name: 'Bombay Sapphire gin'},
 {price: '£15.00', name: 'Gordons Special Dry London Gin'},
 {price: '£15.40', name: 'Haymans London Dry Gin'},
