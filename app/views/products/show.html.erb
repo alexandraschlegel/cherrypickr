@@ -1,199 +1,4 @@
 
-<!-- <div class="product-container">
-  <div class="left-section">
-    <h3> Your Product in Your Area</h3>
-
-
-    <div class="product-show-card">
-      <div class="product-show-details">
-        <div class="product-show-header mb-4">
-          <h4><%= @product.name %></h4>
-        </div>
-        <h5><%= @product.supermarket.name %></h5>
-        <h5><strong><%= @product.price %></strong></h5>
-        <br>
-        <div class="flex-box mt-5">
-        <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
-          Create a Price Alert!
-        </button>
-        <%= link_to "Get Directions", supermarket_path(@product.supermarket), class: "btn" %>
-      </div>
-      </div>
-      <%= image_tag @product.image, alt: "alttext", class: "product-show-image" %>
-    </div> -->
-<!-- Button trigger modal -->
-
-    <!-- Modal -->
-   <!--  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5>
-            <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
-              I am already on your <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
-              <br>
-              You can find me at your nearest <%= link_to '@product.supermarket.name', supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
-            <% else %>
-              You can find me at your nearest <%= @product.supermarket.name %>, or click
-              <%= render "user_products/form" %>
-               to get notified when my price changes!
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="right section">
-    <div class="top sub-section">
-
-      <h4><strong>Other Supermarkets</strong></h4>
-      <div class="other-products">
-        <% @other_ones.each do |other| %>
-          <div class="other-product mb-2">
-            <%= link_to product_path(other) do %>
-              <div class="flex-box">
-              <div class="details">
-                  <div style="margin-top: 20px">
-                  <%= image_tag "Sainsburys.png", alt: "alttext" %>
-                  </div>
-                  <div class="other-details">
-                  <h6><strong><%= @product.name %></strong></h6>
-                  <p><strong><%= other.price %></strong></p>
-                </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= link_to "Back to all products", products_path, class: "btn" %>
-
-<style>
-  .product-show-card {
-    border-radius: 20px;
-    transition: ease-in-out 0.5s;
-    margin-top: 25px;
-    display: flex;
-    background: white;
-    padding: 15px;
-    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    color: #6D7D90;
-  }
-
-  .product-show-card:hover {
-    transition: ease-in-out 0.5s;
-    -webkit-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -2px rgba(0,0,0,0.41);
-  }
-
-  .product-show-card h3 h2 p {
-    color: #6D7D90;
-  }
-
-
-  .product-show-button {
-/*    margin-top: 20px;*/
-     border-radius: 10px;
-  }
-
-  .other-product {
-    border: 1px transparent;
-    transition: ease-in-out 0.5s;
-    margin-top: 3px;
-    display: flex;
-    background: white;
-    padding: 5px;
-    -webkit-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-  }
-
-  .other-product a {
-    text-decoration: none;
-  }
-
-  .other-product:hover {
-    border-radius: 30px;
-    border-left: 2px solid #ef5b5b;
-    border-right: 2px solid #ef5b5b;
-    transition: ease-in-out 0.5s;
-    -webkit-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-    -moz-box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-    box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-  }
-
-  .other-product:first-child {
-    margin-top: 45px;
-  }
-
-  .modal-body{
-    border-radius: 12px;
-    color:#6D7D90;
-  }
-
-.product-show-details h2 h5 h4 {
-    color: #6D7D90;
-}
-
-
-.top h4 {
-  color: #ffffff;
-}
-
-.modal-header h5 {
-  color: #6D7D90;
-}
-
-.details img {
-  margin-left: 20px;
-  margin-top: 8px;
-
-}
-
-.other-details {
-  margin-left: 100px;
-  margin-top: -40px;
-
-}
-
-
-
-
-</style> -->
-<!--
-PSEUDO CODE
-
-1) Make a list based on search term with products with exact same name
-2) it should be in form of a hash
-3) we want to get the value for the key price and key supermarket
-4) display those
-
-search_results = []
-
-def search
-  if x= product.name == query.search
-  search_results << x
-  else
-  return "product not found"
-
-
-end
- -->
-
-
-
 <div class="product-container">
   <div class="left-section">
     <h3> Your Product in Your Area</h3>
@@ -210,7 +15,7 @@ end
         <p><strong><%= @product.price %></strong></p><h5> BEST OFFER </h5>
         </div>
         <div class="flex-box mt-5 mb-2">
-        <button type="button" class="btn product-show-button" data-toggle="modal" data-target="#exampleModalLong">
+        <button type="button" class="btn product-show-button toogle-confetti" data-toggle="modal" data-target="#exampleModalLong">
           Create a Price Alert!
         </button>
         <%= link_to "Get Directions", supermarket_path(@product.supermarket), class: "btn product-show-button" %>
@@ -222,19 +27,21 @@ end
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-confetti" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5>
+            <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
+           <h5>CONGRATULATIONS</h5>
             <button type="button" class="close, border-radius=12px" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <% if @product.user_products.map { |e| e.id }.include?(current_user.id) %>
-              I am already on your <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
+              I am already on your <br>
+              <%= link_to "watchlist", user_path(current_user), class: "btn" %>!
               <br>
-              You can find me at your nearest <%= link_to '@product.supermarket.name', supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
+              You can find me at your nearest <%= link_to @product.supermarket.name, supermarket_path(@product.supermarket) %>, but I will let you know when I get cheaper!
             <% else %>
               You can find me at your nearest <%= @product.supermarket.name %>, or click
               <%= render "user_products/form" %>
@@ -256,10 +63,11 @@ end
               <div class="flex-box">
               <div class="details">
                   <div style="margin-top: 20px">
-                  <%= image_tag "Sainsburys.png", alt: "alttext" %>
+                  <%= image_tag other.supermarket.image, alt: "alttext" %>
                   </div>
                   <div class="other-details">
                   <h6><strong><%= @product.name %></strong></h6>
+                  <p><strong><%= other.supermarket.name %></strong></p>
                   <p><strong><%= other.price %></strong></p>
                 </div>
                 </div>
@@ -303,7 +111,11 @@ end
      margin-top: 32px;
      margin-right: 5px;
      margin-bottom: 20px;
-*/  }
+  }
+
+  .product-show-button:hover {
+    color: green;
+  }
 
   .other-product {
     border: 1px transparent;
@@ -390,6 +202,28 @@ end
   height: 200px;
   display: flex;
   margin-top: 40px;
+}
+
+.modal-content {
+  width: 420px;
+  height: 500px;
+  margin-top: 100px;
+  border-radius: 16px;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-header h5 {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-top: 200px;
+
+.modal-body {
+  text-align: center;
+  width: 100%;
 }
 
 

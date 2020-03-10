@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :user_products, dependent: :destroy
   has_many :products, through: :user_products
+
+  validates :location, presence: true
+  validates :distance, presence: true
 end

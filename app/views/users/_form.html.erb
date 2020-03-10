@@ -1,0 +1,5 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :location %>
+  <%= f.input :distance, collection: [250, 500, 1000, 1500] %>
+  <%= f.button :submit %>
+<% end %>
