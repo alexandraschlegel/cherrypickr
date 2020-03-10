@@ -4,6 +4,7 @@ require "nokogiri"
 Product.destroy_all
 Supermarket.destroy_all
 
+puts "hello"
 # base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
 
 # 10.times do |i|
