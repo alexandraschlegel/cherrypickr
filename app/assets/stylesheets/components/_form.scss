@@ -1,0 +1,13 @@
+
+.form-right {
+  flex-grow: 1;
+}
+
+.form-left{
+  flex-grow: 1;
+}
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+}

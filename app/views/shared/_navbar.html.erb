@@ -1,8 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= action_name == 'home' ? 'clear' : '' %>">
- <!--  <%= link_to "#", class: "navbar-brand" do %> -->
-    <div class="avatar">
-      <%= image_tag "cherry2.png", class: "avatar-img" %>
-      <a href="/"><h2 class="firstheading"> CherryPickr </h2></a>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <div class="logo">
+      <%= image_tag "logo.png"%>
     </div>
   <% end %>
   <% unless params[:action] == "home" %>
@@ -18,6 +17,7 @@
       <% end %>
     </div>
   <% end %>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
