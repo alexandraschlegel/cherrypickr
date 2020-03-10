@@ -364,6 +364,7 @@ end
 #    end
 # end
 
+Branch.create(address:'E2 8DY London', supermarket: tesco)
 Branch.create(address:'W1D 3RF London', supermarket: tesco)
 Branch.create(address:'SW1V 1DT London', supermarket: sainsburys)
 Branch.create(address:'E14 4QT London', supermarket: waitrose)
