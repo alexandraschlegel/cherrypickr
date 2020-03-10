@@ -7,9 +7,9 @@ Branch.destroy_all
 
 
 # Supermarkets
-tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com")
-waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
-sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
+waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image:'waitrose.png')
+sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image:'Sainsburys.png')
 
 # base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
 
@@ -27,9 +27,9 @@ sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sains
  # Tesco
 
 
-tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: "tesco.png")
-tesco_urls = ["https://www.tesco.com/groceries/en-GB/search?query=ben%20and%20jerrys", "https://www.tesco.com/groceries/en-GB/search?query=ice%20cream", "https://www.tesco.com/groceries/en-GB/search?query=oat%20milk", 'https://www.tesco.com/groceries/en-GB/search?query=oats']
-tesco_urls.each do |url|
+# tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: "tesco.png")
+# tesco_urls = ["https://www.tesco.com/groceries/en-GB/search?query=ben%20and%20jerrys", "https://www.tesco.com/groceries/en-GB/search?query=ice%20cream", "https://www.tesco.com/groceries/en-GB/search?query=oat%20milk", 'https://www.tesco.com/groceries/en-GB/search?query=oats']
+# tesco_urls.each do |url|
  # Tesco
 
 
