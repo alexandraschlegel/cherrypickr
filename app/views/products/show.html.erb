@@ -1,4 +1,5 @@
 
+
 <div class="custom-container">
   <div class="product-container">
     <h3> Your Product, in your area</h3>
@@ -18,6 +19,7 @@
 
           <div class="product-description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus in harum autem quas mollitia, unde, aliquam pariatur consectetur architecto nesciunt numquam vitae, optio possimus doloribus perferendis. Iusto dolorem commodi nesciunt.
+
           </div>
 
           <!-- Button trigger modal -->
@@ -26,14 +28,33 @@
           </button>
         </div>
       </div>
-
       <!-- right section -->
       <div class="product-map">
         <%= image_tag "/assets/map.png", alt: "alttext"  %>
-      </div>
-
     </div>
-
+  </div>
+  <div class="right section">
+    <div class="top sub-section">
+      <h4><strong>Other Supermarkets</strong></h4>
+      <div class="other-products">
+        <% @other_ones.each do |other| %>
+          <div class="other-product mb-2">
+            <%= link_to product_path(other) do %>
+              <div class="flex-box">
+              <div class="details">
+                  <div style="margin-top: 20px">
+                  <%= image_tag other.supermarket.image, alt: "alttext" %>
+                  </div>
+                  <div class="other-details">
+                  <h6><strong><%= @product.name %></strong></h6>
+                  <p><strong><%= other.supermarket.name %></strong></p>
+                  <p><strong><%= other.price %></strong></p>
+                </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
 
      <div class="bottom-section">
       <h6> OTHER DETAILS AVALIABLE</h6>
@@ -47,12 +68,8 @@
         <div class="card-right">
         </div>
       </div>
-
-
   </div>
 </div>
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -71,11 +88,9 @@
           Your Price alert is all set <br>
           <%= link_to "watchlist", user_path(current_user), class: "btn"  %>!
           <br>
-
         <% else %>
           <%= @product.supermarket.name %>,
           <%= render "user_products/form" %>
-
         <% end %>
       </div>
     </div>

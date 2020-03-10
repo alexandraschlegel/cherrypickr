@@ -7,11 +7,14 @@
     <%= csrf_meta_tags %>
     <%#= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <body class="landing" style="background-image: url(<%= image_path "bg-angle-landing.png" %>);">
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-   <body style="background-image: url(<%= image_path "background1.png" %>);">
-    <%= render 'shared/navbar' %>
+  <body class="inner" style="background-image: url(<%= image_path "bg-inner-top.png" %>);">
+
+<!--    <body style="background-image: url(<%= image_path "background1.png" %>);">
+ -->    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
 

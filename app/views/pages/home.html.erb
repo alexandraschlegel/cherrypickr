@@ -1,10 +1,11 @@
 <div class="container-home">
-  <div class="header">
-    <h1 style="margin-top: -88px"><strong>COMPARE SUPERMARKET PRICES </strong></h1>
-    <h1 style="margin-bottom: 24px"><strong>IN YOUR LOCAL AREA </strong></h1>
+  <div class="header"
+     <div class="col-8">
+    <h1><strong>COMPARE SUPERMARKET PRICES<br> IN YOUR LOCAL AREA</strong></h1>
+    <h5><strong>Set your grocery shopping list. We will send you an alert whenever <br>any item on your list is on sale in your nearest supermarkets</strong></h5>
     <script src='typed.js'></script>
     <div id="typed">
-      <h3><strong> GET YOUR PRICE ALERT NOW </strong></h3>
+    <!--   <h3><strong> GET YOUR PRICE ALERT NOW </strong></h3> -->
     </div>
   </div>
   <%= form_tag products_path, method: :get, class: "search-form" do %>
@@ -18,17 +19,32 @@
       <%= submit_tag "Go", class: "btn cherry-btn" %>
     </div>
   <% end %>
-</div>
+  </div>
+
+        </div>
+          <div class="col-4">
+            <div class="basket">
+              <%= image_tag "basket.png"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="main-footer">
-  <div class="footer-links">
-     <!--  <h3> hey </h3> -->
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
   </div>
 </div>
-</div>
+
+
+
+
+
 
 
 
