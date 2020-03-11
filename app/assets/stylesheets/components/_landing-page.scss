@@ -1,0 +1,56 @@
+.landingpage-maincontent {
+  margin-top: 60px;
+}
+
+.landingpage-maincontent h1 {
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 120px;
+  font-size: 62px;
+  color: #ffffff;
+}
+
+.landingpage-maincontent p {
+  color: #ffffff;
+}
+
+.landingpage-maincontent .search-form {
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.landingpage-maincontent input[type=text] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 0px;
+  // border-radius: 6px 0px 0px 6px;
+  background-color:#ffffff;
+  opacity: 0.6;
+  box-sizing: border-box;
+  border:0px;
+  height: 54px;
+}
+
+// .landingpage-maincontent input:after {
+//   display: block;
+//   content: " ";
+//   width: 80%;
+//   border-top: 1px solid #555555;
+//   margin: 30px auto 52px;
+// }
+
+.landingpage-maincontent .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.landingpage-maincontent .basket img {
+  width: 450px;
+}

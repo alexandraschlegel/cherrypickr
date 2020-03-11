@@ -5,6 +5,7 @@ Product.destroy_all
 Supermarket.destroy_all
 Branch.destroy_all
 
+
 # Supermarkets
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
 waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image:'waitrose.png')
@@ -332,6 +333,7 @@ end
 #    end
 # end
 
+
 Branch.create(address:'E2 8DY London', supermarket: tesco)
 Branch.create(address:'W1D 3RF London', supermarket: tesco)
 Branch.create(address:'SW1V 1DT London', supermarket: sainsburys)
@@ -341,6 +343,79 @@ Branch.create(address:'SE1 5AG London', supermarket: tesco)
 Branch.create(address:'E15 1HP London', supermarket: sainsburys)
 Branch.create(address:'SW8 2LF London', supermarket: waitrose)
 Branch.create(address:'E17 7AD London', supermarket: tesco)
+
+
+Branch.create (address: 'SW1Y 4LR London', supermarket: tesco)
+Branch.create (address: 'SW1A 2JR London', supermarket: tesco)
+Branch.create (address: 'W1J 7UP London', supermarket: tesco)
+Branch.create (address: 'WC2R 0AP London', supermarket: tesco)
+Branch.create (address: 'WC2R 0AP London', supermarket: tesco)
+Branch.create (address: 'WC2R 0AP London', supermarket: tesco)
+Branch.create (address: 'SE1 7AA London', supermarket: tesco)
+Branch.create (address: 'SE1 8UL London', supermarket: tesco)
+Branch.create (address: 'SW1P 2BW London', supermarket: tesco)
+Branch.create (address: 'W1D 3RF London', supermarket: tesco)
+Branch.create (address: 'WC2R 0AP London', supermarket: tesco)
+
+Branch.create (address: 'N1 6AA London', supermarket: tesco)
+Branch.create (address: 'N1 3JE London', supermarket: tesco)
+Branch.create (address: 'E8 4DG London', supermarket: tesco)
+Branch.create (address: 'E2 7QU London', supermarket: tesco)
+Branch.create (address: 'N1 8SY London', supermarket: tesco)
+Branch.create (address: 'N1 2EB London', supermarket: tesco)
+Branch.create (address: 'E1 6HP London', supermarket: tesco)
+Branch.create (address: 'N1 8DU London', supermarket: tesco)
+Branch.create (address: 'EC1V 3AF London', supermarket: tesco)
+Branch.create (address: 'EC1Y 1AG London', supermarket: tesco)
+
+Branch.create (address: 'EC1V 9EY London', supermarket: sainsburys)
+Branch.create (address: 'E2 8DJ London', supermarket: sainsburys)
+Branch.create (address: 'EC1Y 1BD London', supermarket: sainsburys)
+Branch.create (address: 'EC1V 1NR London', supermarket: sainsburys)
+Branch.create (address: 'E1 6HZ London', supermarket: sainsburys)
+Branch.create (address: 'E2 7SJ London', supermarket: sainsburys)
+Branch.create (address: 'E1  London', supermarket: sainsburys)
+Branch.create (address: 'N1 8 London', supermarket: sainsburys)
+Branch.create (address: 'EC1V 3 London', supermarket: sainsburys)
+Branch.create (address: 'EC1Y 1 London', supermarket: sainsburys)
+Branch.create(address:'E15 1 London', supermarket: sainsburys)
+
+Branch.create (address: 'W1A 1EX London', supermarket: waitrose)
+Branch.create (address: 'SW1E 6QP London', supermarket: waitrose)
+Branch.create (address: 'SW1V 1QT London', supermarket: waitrose)
+Branch.create (address: 'SW1E 5DH London', supermarket: waitrose)
+Branch.create (address: 'SE1 9LS London', supermarket: waitrose)
+Branch.create (address: 'WC1V 7EX London', supermarket: waitrose)
+
+
+Branch.create (address: 'E1 5BW London', supermarket: asda)
+Branch.create (address: 'E1 4UJ London', supermarket: asda)
+Branch.create (address: 'SE1 5AG London', supermarket: asda)
+Branch.create (address: 'E10 5NH London', supermarket: asda)
+Branch.create (address: 'N15 4QD London', supermarket: asda)
+Branch.create (address: ' N17 9JF London', supermarket: asda)
+
+
+
+Branch.create (address: 'N7 6PL London', supermarket: morrisons)
+Branch.create (address: 'N16 5TB London', supermarket: morrisons)
+Branch.create (address: 'NW1 8AA London', supermarket: morrisons)
+Branch.create (address: 'SE17 2DLLondon', supermarket: morrisons)
+Branch.create (address: 'E15 1HP London', supermarket: morrisons)
+Branch.create (address: 'SE5 8RR London', supermarket: morrisons)
+Branch.create (address: 'SE15 5EW London', supermarket: morrisons)
+Branch.create (address: 'E16 1ED London', supermarket: morrisons)
+Branch.create (address: 'N22 6SU London', supermarket: morrisons)
+
+
+
+
+
+
+
+
+
+
 
 
 # # sainsburys = Supermarket.create!(name: "sainsburys", website: "https://www.sainsburys.com")
@@ -513,15 +588,39 @@ Branch.create(address:'E17 7AD London', supermarket: tesco)
 # end
 
 
-
-
-
-
-
-
-
-
 puts "successful seed!"
+
+
+
+# waitrose *
+
+# url = "https://www.waitrose.com/ecom/shop/search?&searchTerm=oat%20milk"
+# doc = Nokogiri::HTML(open(url))
+# doc.search(".products___2kMi1").each do |result_card|
+# prod_name = 'check'
+#   price = result_card.search(".prices___1JkR4")
+#   image_src = result_card.search("placeholder___2ydJA").value
+#   Product.create!(supermarket: waitrose, image: image_src, price: price, name: prod_name)
+
+# end
+
+# aldi => good to go doesnt seem to work for icecream
+# url = "https://www.aldi.co.uk/c/groceries/frozen-food/ice-cream-and-desserts"
+# doc = Nokogiri::HTML(open(url))
+# doc.search(".category-item__wrapper-link").each do |result_card|
+#   doc2 = Nokogiri::HTML(open(result_card.attr('href')))
+#   name = doc2.search(".product-details__name").text
+#   price = "£ " + doc2.search(".product-price__value").text.strip
+#   binding.pry
+#   image = doc2.search("img").attr('src').value
+
+# end
+
+#podImage___1ajLe
+#details___2RheR
+
+# productPod___2BPU9
+#productPod___3mbxG podImage___1ajLe
 
 # iceland = Supermarket.create!(name: "Iceland", website: "https://www.iceland.co.uk")
 

@@ -1,27 +1,21 @@
-<div class="container-home">
-  <div class="header"
-     <div class="col-8">
-    <h1><strong>COMPARE SUPERMARKET PRICES<br> IN YOUR LOCAL AREA</strong></h1>
-    <h5><strong>Set your grocery shopping list. We will send you an alert whenever <br>any item on your list is on sale in your nearest supermarkets</strong></h5>
-    <script src='typed.js'></script>
-    <div id="typed">
-    <!--   <h3><strong> GET YOUR PRICE ALERT NOW </strong></h3> -->
-    </div>
-  </div>
-  <%= form_tag products_path, method: :get, class: "search-form" do %>
-    <div class="search-boxes-inline d-flex">
-      <%= text_field_tag :product,
-        params[:product],
-        class: "home-search-button typed",
-        placeholder: "Enter Product"
-      %>
+<section class="landingpage-maincontent">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h1>Compare Supermarket Prices in your local area</h1>
+            <p>Ut ipsum tellus, vulputate at vestibulum consequat, tempus id sapien. Duis tincidunt neque at elit gravida, vel auctor arcu dictum. Curabitur in diam sem.</p>
+            <%= form_tag products_path, method: :get, class: "search-form" do %>
+              <div class="input-group">
+                 <!-- <input type="text"> -->
+                 <%= text_field_tag :product, params[:product], class: "typed", placeholder: "Enter Product" %>
+                 <span class="input-group-btn">
+                      <%= submit_tag "Go", class: "button" %>
+                      <!-- <a href class="button">Search</a> -->
+                 </span>
+              </div> <!-- end input-group -->
+            <% end %>
 
-      <%= submit_tag "Go", class: "btn cherry-btn" %>
-    </div>
-  <% end %>
-  </div>
-
-        </div>
+          </div>
           <div class="col-4">
             <div class="basket">
               <%= image_tag "basket.png"%>
@@ -29,8 +23,7 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+</section>
 
   <div class="main-footer">
       <div class="footer-links">

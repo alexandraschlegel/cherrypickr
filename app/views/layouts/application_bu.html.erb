@@ -11,19 +11,12 @@
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-
-  <% if controller_name == 'pages' || action_name == 'home' %>
-      <body class="landing">
-    <% else %>
-      <body class="inner">
-  <% end %>
-
-  <%= yield %>
+  <body class="inner" style="background-image: url(<%= image_path "bg-inner-top.png" %>);">
 
 
+ -->    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
 
     <%= javascript_pack_tag 'application' %>
   </body>

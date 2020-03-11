@@ -41,17 +41,6 @@ position: relative;
       box-shadow: 0 4px 46px rgba(238, 106, 105, 0.15);
 }
 
-.results_footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  background-image: url('../images/bg-inner-bottom.png');
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 69px;
-  z-index: -10;
-}
-
 .results__card p{
   height: 85px;
   margin-bottom: -2rem;
