@@ -2,7 +2,7 @@
 
 <div class="custom-container">
   <div class="product-container">
-    <h4> Your Product, in your area</h4>
+    <h4> Your Product At the Best Price in your Area</h4>
 
     <div class="product-wrapper">
       <!-- left section -->
@@ -18,15 +18,19 @@
           <!-- <img class="supermarket-logo" src="" alt=""> -->
           <span class="product-price">£2.99</span>
 
-          <div class="product-description">
+    <!--       <div class="product-description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus in harum autem quas mollitia, unde, aliquam pariatur consectetur architecto nesciunt numquam vitae, optio possimus doloribus perferendis. Iusto dolorem commodi nesciunt.
 
-          </div>
+          </div> -->
 
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
-            SET A PRICE ALERT!
-          </button>
+          <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
+            <span>Already have an alert on this one.</span>
+          <% else %>
+            <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
+              SET A PRICE ALERT!
+            </button>
+          <% end %>
         </div>
       </div>
       <!-- right section -->
@@ -62,7 +66,7 @@
       <div class="modal-header">
         <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
        <h5>CONGRATULATIONS</h5>
-         <%= image_tag "/assets/celebration.png", alt: "alttext",  class: "confetti" %>
+         <%= image_tag "/assets/confetti", alt: "alttext",  class: "confetti" %>
         <button type="button" class="pop-btn" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -70,7 +74,7 @@
       <div class="modal-body">
         <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
           Your Price alert is all set <br>
-          <%= link_to "watchlist", user_path(current_user), class: "btn"  %>!
+          <%= link_to "See all your price alerts", user_path(current_user), class: "btn"  %>!
           <br>
         <% else %>
           <%= @product.supermarket.name %>,

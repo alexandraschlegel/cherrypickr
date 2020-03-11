@@ -16,10 +16,12 @@ if (check) {
 }
 
 import { initMapbox } from '../plugins/init_mapbox';
-
+import "mapbox-gl/dist/mapbox-gl.css";
 console.log(initMapbox)
 
-initMapbox();
+// document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+// });
 
 
 if (document.querySelector('.modal-content') != null) {

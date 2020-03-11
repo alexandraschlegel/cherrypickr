@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_000516) do
 
   create_table "branches", force: :cascade do |t|
     t.string "address"
-    t.string "longitude"
-    t.string "latitude"
+    t.float "longitude"
+    t.float "latitude"
     t.bigint "supermarket_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
