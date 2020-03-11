@@ -1,7 +1,7 @@
 class Supermarket < ApplicationRecord
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :deals
-  has_many :branches
+  has_many :branches, dependent: :destroy
 
 
   def self.all_branches
