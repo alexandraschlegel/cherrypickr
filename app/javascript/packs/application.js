@@ -4,8 +4,11 @@ require("channels")
 
 import "bootstrap";
 
-
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal
 import Typed from 'typed.js';
+import { initMapbox } from '../plugins/init_mapbox';
 
 let check = document.querySelector(".typed")
 if (check) {
@@ -14,10 +17,6 @@ if (check) {
     typeSpeed: 45
   });
 }
-
-import { initMapbox } from '../plugins/init_mapbox';
-
-console.log(initMapbox)
 
 initMapbox();
 
@@ -207,3 +206,4 @@ class Confetti {
 })();
 
 }
+

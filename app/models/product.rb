@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   belongs_to :supermarket
   has_many :user_products, dependent: :destroy
 
-    include PgSearch::Model
+  include PgSearch::Model
   pg_search_scope :search_by_name,
     against: :name,
     using: {
