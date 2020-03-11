@@ -10,36 +10,12 @@
   color: green;
 }
 
-.other-product {
-  border: 1px transparent;
-  transition: ease-in-out 0.5s;
-  margin-top: 3px;
-  display: flex;
-  background: white;
-  padding: 5px;
-  box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
+
+
+.modal-body{
+  border-radius: 12px;
+  color:#6D7D90;
 }
-
-.other-product a {
-  text-decoration: none;
-}
-
-.other-product:hover {
-  border-radius: 30px;
-  border-left: 2px solid #ef5b5b;
-  border-right: 2px solid #ef5b5b;
-  transition: ease-in-out 0.5s;
-  box-shadow: 3px 11px 15px 5px rgba(0,0,0,0.41);
-}
-
-  .other-product:first-child {
-    margin-top: 10px;
-  }
-
-  .modal-body{
-    border-radius: 12px;
-    color:#6D7D90;
-  }
 
 
 .product-show-header {
@@ -50,14 +26,25 @@
   color: #95A5B8;
 }
 
-.product-show-details p {
-  font-size: 20px;
-  color: #6D7D90;
+.product-description p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
 
-}
 
 .product-show-details {
   margin-left: 32px;
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  p {
+  font-size: 20px;
+  color: #6D7D90;
+  }
+
 }
 
 
@@ -95,6 +82,7 @@ color: #743038;
   display: flex;
   margin-top: 40px;
 }
+
 
 .modal-content {
   width: 420px;
@@ -166,15 +154,6 @@ h3{
 
 }
 
-.card-left{
-  width: 351px;
-  height:186px;
-  background-color:#FFFFFF;
-  border-radius: 16px;
-  margin-left:10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  margin-top:55px;
-}
 
 .card-middle{
   width: 351px;
@@ -202,10 +181,6 @@ h3{
 
 }
 
-.other-products-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
 
 h6{
 font-family: Quicksand;
@@ -224,5 +199,82 @@ font-size: 15px;
 line-height: 140%;
   color: #95A5B8;
 }
+.prod-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+
+
+
+.other-products-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.card-info{
+  text-align: right;
+  padding-right: 39px
+}
+
+.card-left {
+  width: 351px;
+  height:186px;
+  background-color:#FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-left img {
+  width:104px;
+  height:124px;
+}
+
+.card-left p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #EF5C5B !important;
+}
+
+.card-supermkt-name {
+  text-align: left;
+
+}
+
+.card-supermkt-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-supermkt-infos img {
+  width:110px;
+  height:42px;
+}
+
+
+
+
+ .card-product-price {
+     font-size: 20px;
+     font-weight: bold;
+     color: #FF5367;
+     display: block;
+     padding: 6px 10px 6px 10px;
+     border: 1px solid #FF5367;
+     width: fit-content;
+     background-color: #fefefe;
+     border-radius: 6px;
+ }
+
+
 
 

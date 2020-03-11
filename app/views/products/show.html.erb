@@ -2,6 +2,7 @@
 
 <div class="custom-container">
   <div class="product-container">
+
     <h4> Your Product At the Best Price in your Area</h4>
 
     <div class="product-wrapper">
@@ -31,33 +32,38 @@
               SET A PRICE ALERT!
             </button>
           <% end %>
+          
         </div>
-      </div>
-      <!-- right section -->
-      <div class="product-map">
-        <%= image_tag "/assets/map.png", alt: "alttext"  %>
     </div>
   </div>
-  <div class="right section">
-    <div class="top sub-section">
-
-      <div class="other-products">
-
-
-     <div class="bottom-section">
-      <h6>Also available at</h6>
-
-      <div class="other-products-wrapper">
-        <div class="card-left">
-        </div>
-        <div class="card-middle">
-
-        </div>
-        <div class="card-right">
-        </div>
-      </div>
-  </div>
 </div>
+
+  <div class="custom-container">
+    <div class="bottom-section">
+      <h6>Also available at</h6>
+        <div class="container">
+          <div class="other-products-wrapper">
+            <% @other_ones.each do |other_product| %>
+              <%# raise %>
+            <div class="card-left">
+              <%= image_tag other_product.image, alt: "alttext" %>
+              <div class="card-info">
+                <div class="card-supermkt-name">
+                  <p><%= other_product.name %></p>
+                </div>
+                <div class="card-supermkt-infos">
+                  <span class="card-product-price"><%= other_product.price %></span>
+                  <div class="spmkt-img">
+                    <%= image_tag other_product.supermarket.image  %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

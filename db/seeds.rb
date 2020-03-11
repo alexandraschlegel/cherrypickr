@@ -1,3 +1,4 @@
+
 require "open-uri"
 require "nokogiri"
 
@@ -11,9 +12,11 @@ puts 'creating supermarkets!'
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
 waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image:'waitrose.png')
 sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image:'Sainsburys.png')
-# asda = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image:'Sainsburys.png')
 
 puts "create #{tesco}, #{waitrose} and #{sainsburys}"
+
+asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com", image:'morrisons.png')
+morrisons = Supermarket.create!(name: "Morrisons", website: "https://www.morrisons.com", image:'morrisons.png')
 
 # base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
 
@@ -50,32 +53,32 @@ doc = Nokogiri::HTML(open(url))
 end
 
 
-#waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
-# seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
-# {price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
-# {price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£2.05', name: 'Rude Health oat drink'}, {price: '£2.00', name: 'Plenish Oat+ Enriched'},
-# {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.55', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-# {price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'}]
-#  seed_products.each do |seed_product|
-#   if Product.where(name: seed_product[:name]).length > 0
-#     image_src = Product.where(name: seed_product[:name])[0].image
-#     Product.create(supermarket: waitrose, image: image_src, price: seed_product[:price], name: seed_product[:name])
-#   end
-# end
+# waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
+seed_products = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
+{price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
+{price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£2.05', name: 'Rude Health oat drink'}, {price: '£2.00', name: 'Plenish Oat+ Enriched'},
+{price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.55', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+{price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'}]
+ seed_products.each do |seed_product|
+  if Product.where(name: seed_product[:name]).length > 0
+    image_src = Product.where(name: seed_product[:name])[0].image
+    Product.create(supermarket: waitrose, image: image_src, price: seed_product[:price], name: seed_product[:name])
+  end
+end
 
 
-#sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
-# seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
-# {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
-# {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
-# {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-# {price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}]
-#   seed_products_2.each do |seed_product|
-#    if Product.where(name: seed_product[:name]).length > 0
-#     image_src = Product.where(name: seed_product[:name])[0].image
-#     Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
-#   end
-# end
+# sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
+seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
+{price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
+{price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
+{price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}]
+  seed_products_2.each do |seed_product|
+   if Product.where(name: seed_product[:name]).length > 0
+    image_src = Product.where(name: seed_product[:name])[0].image
+    Product.create(supermarket: sainsburys, image: image_src, price: seed_product[:price], name: seed_product[:name])
+  end
+end
 
 # OAT PRODUCTS
 ## SAINSBURYS
@@ -392,25 +395,24 @@ Branch.create(address: 'SW1E 5DH London', supermarket: waitrose)
 Branch.create(address: 'SE1 9LS London', supermarket: waitrose)
 Branch.create(address: 'WC1V 7EX London', supermarket: waitrose)
 
-
-# Branch.create(address: 'E1 5BW London', supermarket: asda)
-# Branch.create(address: 'E1 4UJ London', supermarket: asda)
-# Branch.create(address: 'SE1 5AG London', supermarket: asda)
-# Branch.create(address: 'E10 5NH London', supermarket: asda)
-# Branch.create(address: 'N15 4QD London', supermarket: asda)
-# Branch.create(address: ' N17 9JF London', supermarket: asda)
-
+Branch.create(address: 'E1 5BW London', supermarket: asda)
+Branch.create(address: 'E1 4UJ London', supermarket: asda)
+Branch.create(address: 'SE1 5AG London', supermarket: asda)
+Branch.create(address: 'E10 5NH London', supermarket: asda)
+Branch.create(address: 'N15 4QD London', supermarket: asda)
+Branch.create(address: ' N17 9JF London', supermarket: asda)
 
 
-# Branch.create(address: 'N7 6PL London', supermarket: morrisons)
-# Branch.create(address: 'N16 5TB London', supermarket: morrisons)
-# Branch.create(address: 'NW1 8AA London', supermarket: morrisons)
-# Branch.create(address: 'SE17 2DLLondon', supermarket: morrisons)
-# Branch.create(address: 'E15 1HP London', supermarket: morrisons)
-# Branch.create(address: 'SE5 8RR London', supermarket: morrisons)
-# Branch.create(address: 'SE15 5EW London', supermarket: morrisons)
-# Branch.create(address: 'E16 1ED London', supermarket: morrisons)
-# Branch.create(address: 'N22 6SU London', supermarket: morrisons)
+
+Branch.create(address: 'N7 6PL London', supermarket: morrisons)
+Branch.create(address: 'N16 5TB London', supermarket: morrisons)
+Branch.create(address: 'NW1 8AA London', supermarket: morrisons)
+Branch.create(address: 'SE17 2DLLondon', supermarket: morrisons)
+Branch.create(address: 'E15 1HP London', supermarket: morrisons)
+Branch.create(address: 'SE5 8RR London', supermarket: morrisons)
+Branch.create(address: 'SE15 5EW London', supermarket: morrisons)
+Branch.create(address: 'E16 1ED London', supermarket: morrisons)
+Branch.create(address: 'N22 6SU London', supermarket: morrisons)
 
 
 
