@@ -1,21 +1,63 @@
 .product-container {
   background-color: white;
   border-radius: 20px;
-  box-shadow: 3px 11px 15px -7px rgba(0,0,0,0.41);
-  height: 77vh;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  box-shadow: 0 4px 46px rgba(238, 106, 105, 0.15);
+  // height: 77vh;
+}
+
+.product-container .product-wrapper {
+  margin-top: 30px;
+}
+
+.product-container .product-show-details {
+  margin-right: 32px;
+  width: 400px;
 }
 
 .product-container h1 {
-  color: #95A5B8;
-  margin-top: 100px;
+  color: #EF5C5B;
+  // margin-top: 100px;
 }
 
 .product-container h3 {
   color: #743038;
-  margin-top: 80px;
+  // margin-top: 80px;
   margin-bottom: 32px;
-  font-family: Quicksand;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
   font-weight:bold;
+}
+
+.product-container h4 {
+  color: #6D7D90;
+}
+
+.product-container .product-price {
+   font-size: 20px;
+   font-weight: bold;
+   color: #FF5367;
+   display: block;
+   padding:6px 10px 6px 10px;
+   border: 1px solid #FF5367;
+   width: fit-content;
+   background-color: #fefefe;
+   border-radius: 6px;
+}
+
+.product-container .btn.btn-primary.rounded {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.product-container .product-description {
+  margin-top: 10px;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
+  font-size: 16px;
 }
 
 .product-map {
@@ -24,6 +66,19 @@
     margin-bottom:15px;
     padding-right:15px;
   }
+}
+
+.product-container .bottom-section {
+    border-radius: 20px 20px 20px 20px;
+    margin-top: 60px;
+    background: #EF5C5B;
+}
+
+.product-container .bottom-section .card-left,
+.product-container .bottom-section .card-middle,
+.product-container .bottom-section .card-right {
+  width: 33.333%;
+  margin: 1.5%;
 }
 
 
