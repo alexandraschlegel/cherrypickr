@@ -11,10 +11,15 @@
 .btn {
   padding: 10px;
 
-  background-color: #EF5C5B;
+  background-color: #4caf50;
   color: white;
   border-radius: 12px;
 }
+
+.btn-primary:hover {
+    background-color: #3F9042;
+    border-color: none;
+  }
 
 
 .rounded{
@@ -30,7 +35,7 @@
   left: 0px;
   top: 155px;
   position: absolute;
-  font-family: Roboto;
+  font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
   font-size: 21px;

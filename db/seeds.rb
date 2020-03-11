@@ -8,12 +8,15 @@ Branch.destroy_all
 
 
 # Supermarkets
+puts 'creating supermarkets!'
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
 waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image:'waitrose.png')
 sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image:'Sainsburys.png')
+
+puts "create #{tesco}, #{waitrose} and #{sainsburys}"
+
 asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com", image:'morrisons.png')
 morrisons = Supermarket.create!(name: "Morrisons", website: "https://www.morrisons.com", image:'morrisons.png')
-
 
 # base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
 
@@ -37,15 +40,16 @@ tesco_urls.each do |url|
  # Tesco
 
 doc = Nokogiri::HTML(open(url))
-doc.search(".tile-content").each do |result_card|
-  prod_name = result_card.search("h3").text
-  price = result_card.search(".price-per-sellable-unit").text
-  # p description = result_card.search(".product-info-block__content-item").text
-  # offer = result_card.search(".offer-text").text
-  # date = result_card.search(".dates").text
-  image_src = result_card.search(".product-image").attr('src').value
-  Product.create!(supermarket: tesco, image: image_src, price: price, name: prod_name)
-end
+  doc.search(".tile-content").each do |result_card|
+    prod_name = result_card.search("h3").text
+    price = result_card.search(".price-per-sellable-unit").text
+    # p description = result_card.search(".product-info-block__content-item").text
+    # offer = result_card.search(".offer-text").text
+    # date = result_card.search(".dates").text
+    image_src = result_card.search(".product-image").attr('src').value
+    product = Product.create!(supermarket: tesco, image: image_src, price: price, name: prod_name)
+    puts "created #{product.name}"
+  end
 end
 
 
@@ -336,7 +340,7 @@ end
 #      Product.create(supermarket: Waitrose, price: seed_product[:price], name: seed_product[:name])
 #    end
 # end
-
+puts "creating branches"
 
 Branch.create(address:'E2 8DY London', supermarket: tesco)
 Branch.create(address:'W1D 3RF London', supermarket: tesco)
@@ -390,7 +394,6 @@ Branch.create(address: 'SW1V 1QT London', supermarket: waitrose)
 Branch.create(address: 'SW1E 5DH London', supermarket: waitrose)
 Branch.create(address: 'SE1 9LS London', supermarket: waitrose)
 Branch.create(address: 'WC1V 7EX London', supermarket: waitrose)
-
 
 Branch.create(address: 'E1 5BW London', supermarket: asda)
 Branch.create(address: 'E1 4UJ London', supermarket: asda)
@@ -643,4 +646,4 @@ puts "successful seed!"
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre')
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.85', name: 'Oatly Oat Drink Low Fat')
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml')
-
+puts "done!"

@@ -9,12 +9,12 @@ class Supermarket < ApplicationRecord
 
   end
 
-  def self.markers(query)
-    self.where(name: query).all_branches.reduce.map do |branch|
-      {
-        lat: branch.latitude,
-        lng: branch.longitude
-      }
-    end
-  end
+  # def self.markers(query)
+  #   self.where(name: query).all_branches.reduce.map do |branch|
+  #     {
+  #       lat: branch.latitude,
+  #       lng: branch.longitude
+  #     }
+  #   end
+  # end
 end
