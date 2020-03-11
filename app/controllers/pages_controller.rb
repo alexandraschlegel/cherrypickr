@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+#additions for faq and about pages
+  def about
+  end
+
+  def faq
+  end
 end
