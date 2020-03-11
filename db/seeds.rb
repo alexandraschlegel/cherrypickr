@@ -7,7 +7,7 @@ UserProduct.destroy_all
 Product.destroy_all
 Supermarket.destroy_all
 User.destroy_all
-Deals.destroy_all
+Deal.destroy_all
 
 
 # Supermarkets
