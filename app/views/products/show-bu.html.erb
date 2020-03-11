@@ -14,8 +14,7 @@
       <div class="product-show-card">
         <div class="product-show-details">
           <h1><%= @product.name %></h1>
-
-          <!-- <img class="supermarket-logo" src="" alt=""> -->
+          <img class="supermarket-logo" src="" alt="">
           <span class="product-price">£2.99</span>
 
           <div class="product-description">
@@ -24,7 +23,7 @@
           </div>
 
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
+          <button type="button" class="btn-2" data-toggle="modal" data-target="#exampleModalLong">
             SET A PRICE ALERT!
           </button>
         </div>
@@ -36,12 +35,29 @@
   </div>
   <div class="right section">
     <div class="top sub-section">
-
+      <h4><strong>Other Supermarkets</strong></h4>
       <div class="other-products">
-
+        <% @other_ones.each do |other| %>
+          <div class="other-product mb-2">
+            <%= link_to product_path(other) do %>
+              <div class="flex-box">
+              <div class="details">
+                  <div style="margin-top: 20px">
+                  <%= image_tag other.supermarket.image, alt: "alttext" %>
+                  </div>
+                  <div class="other-details">
+                  <h6><strong><%= @product.name %></strong></h6>
+                  <p><strong><%= other.supermarket.name %></strong></p>
+                  <p><strong><%= other.price %></strong></p>
+                </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
 
      <div class="bottom-section">
-      <h6>Also available at</h6>
+      <h6> OTHER DETAILS AVALIABLE</h6>
 
       <div class="other-products-wrapper">
         <div class="card-left">

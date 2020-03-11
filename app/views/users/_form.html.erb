@@ -1,5 +1,11 @@
 <%= simple_form_for @user do |f| %>
-  <%= f.input :location %>
-  <%= f.input :distance, collection: [250, 500, 1000, 1500] %>
-  <%= f.button :submit %>
+  <div class="form-flex">
+    <div class="form-left">
+      <%= f.input :location %>
+    </div>
+    <div class="form-right">
+      <%= f.input :distance, collection: [250, 500, 1000, 1500] %>
+    </div>
+  </div>
+  <%= f.submit "update your settings", class: "btn btn-primary rounded ml-0" %>
 <% end %>
