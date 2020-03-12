@@ -1,6 +1,6 @@
 body.landing {
   // background-image: url('../images/bg-angle-landing.png');
-  background-image: image-url('../assets/bg-angle-landing.png');
+  background-image: url(asset_path(“../assets/bg-angle-landing.png"));
   background-repeat: no-repeat;
   background-position: 0 -40px;
   background-color: #ffffff;
@@ -8,8 +8,10 @@ body.landing {
 
 body.inner {
   // background-image: url('../images/bg-inner-top.png');
-  background-image: image-url('../assets/bg-inner-top.png');
+  background-image: url(asset_path(“../assets/bg-inner-top.png"));
   background-repeat: no-repeat;
   background-position: 0 0px;
   background-color: #ffffff;
 }
+
+

@@ -1,69 +1,83 @@
 
 
+
 <div class="custom-container">
   <div class="product-container">
-
     <h4> Your Product At the Best Price in your Area</h4>
-
-    <div class="product-wrapper">
-      <!-- left section -->
-      <div class="product-image">
-        <%= image_tag @product.image, alt: "alttext" %>
-      </div>
-
-      <!-- middle section -->
-      <div class="product-show-card">
-        <div class="product-show-details">
-          <h1><%= @product.name %></h1>
-
-          <!-- <img class="supermarket-logo" src="" alt=""> -->
-          <span class="product-price">£2.99</span>
-
-    <!--       <div class="product-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus in harum autem quas mollitia, unde, aliquam pariatur consectetur architecto nesciunt numquam vitae, optio possimus doloribus perferendis. Iusto dolorem commodi nesciunt.
-
-          </div> -->
-
-          <!-- Button trigger modal -->
-          <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
-            <span>Already have an alert on this one.</span>
-          <% else %>
-            <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
+      <div class="product-wrapper">
+        <!-- left section -->
+        <div class="product-image">
+          <%= image_tag @product.image, alt: "alttext" %>
+        </div>
+        <!-- middle section -->
+        <div class="product-show-card">
+          <div class="product-show-details">
+            <h1><%= @product.name %></h1>
+              <div class="prod-price">
+                <%= image_tag @product.supermarket.image, width: 80 %>
+                <span class="product-price"><%= @product.price %></span>
+              </div>
+              <div class="product-description">
+<!--                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus in harum autem quas mollitia, unde, aliquam pariatur consectetur architecto nesciunt numquam vitae, optio possimus doloribus perferendis. Iusto dolorem commodi nesciunt.</p>
+ -->              </div>
+              <!-- Button trigger modal -->
+            <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
+              <div class="btn" style="background-color: lightgrey !important;">
+                ALREADY ON YOUR WATCHLIST
+              </div>
+            <% else %>
+              <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModalLong">
               SET A PRICE ALERT!
-            </button>
-          <% end %>
-          
+              </button>
+            <% end %>
+          </div>
+        </div>
+        <!-- right section -->
+          <div class="container"
+          style="width: 40%;
+       border-radius: 10px;
+       height: 500px">
+        <%= image_tag 'map.png', width: 400%>
         </div>
     </div>
   </div>
 </div>
 
-  <div class="custom-container">
+
+          <!-- Button trigger modal -->
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+  <div class="custom-bottom-container">
     <div class="bottom-section">
       <h6>Also available at</h6>
-        <div class="container">
+        <div class="bottom-container">
           <div class="other-products-wrapper">
             <% @other_ones.each do |other_product| %>
               <%# raise %>
             <div class="card-left">
-              <%= image_tag other_product.image, alt: "alttext" %>
-              <div class="card-info">
-                <div class="card-supermkt-name">
-                  <p><%= other_product.name %></p>
-                </div>
-                <div class="card-supermkt-infos">
-                  <span class="card-product-price"><%= other_product.price %></span>
-                  <div class="spmkt-img">
-                    <%= image_tag other_product.supermarket.image  %>
+                <%= image_tag other_product.image, alt: "alttext" %>
+                <div class="card-info">
+                  <div class="card-supermkt-name">
+                    <p><%= other_product.name %></p>
+                  </div>
+                  <div class="card-supermkt-infos">
+                    <span class="card-product-price"><%= other_product.price %></span>
+                    <div class="spmkt-img">
+                      <%= image_tag other_product.supermarket.image  %>
+                    </div>
                   </div>
                 </div>
               </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
-        </div>
+      </div>
     </div>
-  </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -79,11 +93,12 @@
       </div>
       <div class="modal-body">
         <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
-          Your Price alert is all set <br>
-          <%= link_to "See all your price alerts", user_path(current_user), class: "btn"  %>!
+          <h5>Your Price alert is all set</h5><br>
+          <%= link_to "See all your price alerts!", user_path(current_user), class: "btn"  %>
           <br>
         <% else %>
-          <%= @product.supermarket.name %>,
+          <h5>Your Price alert is all set</h5><br>
+         <!--  <%= @product.supermarket.name %> -->,
           <%= render "user_products/form" %>
         <% end %>
       </div>
