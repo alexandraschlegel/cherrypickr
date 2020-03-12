@@ -7,7 +7,6 @@
             <h4>Your Settings</h4>
             <h5> Your current location is: <em>Hoxton</em> with range:<em> 5km </em> </h5>
             <h4>Add Another Location</h4>
-             <%= render 'edit', user: @user %>
              <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
                <div class="search-boxes-inline d-flex">
                  <%= text_field_tag :query,
@@ -17,13 +16,23 @@
               <% end %>
                </div>
           </div>
-          <div class ="container d-flex" id="map"
+         <!--  <div class ="container d-flex" id="map"
            style="width: 40%;
            border-radius: 16px;
            height: 500px;"
            data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+           data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
+          </div> -->
+
+           <div class="product-map" id="map"
+          style="width: 40%;
+          border-radius: 10px;
+          height: 350px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+
         </div>
       </div>
 

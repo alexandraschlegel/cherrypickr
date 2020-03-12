@@ -21,8 +21,8 @@ class ProductsController < ApplicationController
     @markers = []
     supermarket.branches.each do |branch|
       @markers << {
-        lng: branch.longitude,
-        lat: branch.latitude
+        longitude: branch.longitude,
+        latitude: branch.latitude
       }
     end
   end

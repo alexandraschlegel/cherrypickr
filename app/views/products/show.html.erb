@@ -2,7 +2,7 @@
 
 
 <div class="custom-container">
-  <div class="product-container">
+  <div class="product-container fixed-height-show">
     <h4> Your Product At the Best Price in your Area</h4>
       <div class="product-wrapper">
         <!-- left section -->
@@ -36,7 +36,7 @@
         <div class="product-map" id="map"
           style="width: 40%;
           border-radius: 10px;
-          height: 500px;"
+          height: 350px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
@@ -88,7 +88,7 @@
       <div class="modal-header">
         <!-- <h5 class="modal-title" id="exampleModalLongTitle"><%= @product.name %></h5> -->
        <h5>CONGRATULATIONS</h5>
-         <%= image_tag "/assets/confetti", alt: "alttext",  class: "confetti" %>
+         <%= image_tag "confetti.png", alt: "alttext",  class: "confetti confetti-margin" %>
         <button type="button" class="close-btn" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
