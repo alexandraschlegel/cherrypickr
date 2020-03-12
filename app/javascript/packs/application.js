@@ -15,9 +15,10 @@ let check = document.querySelector(".typed")
 if (check) {
   var typed = new Typed('.typed', {
     strings: [" GET YOUR PRICE ALERT NOW.", "WHAT ITEM DO YOU WANT TO SEARCH FOR?", "SO TELL ME WHAT YOU WANT", "WHAT YOU REALLY REALLY WANT!",
-     "I'LL TELL YOU WHAT I WANT WHAT I REALLY, REALLY WANT", "Enter your product here"],
+     "I'LL TELL YOU WHAT YOU WANT", "WHAT YOU REALLY, REALLY WANT", "YOU WANT DEALS!!!!", "WHAT PRODUCT DO YOU WANT?"],
     typeSpeed: 45
   });
+
 }
 
 

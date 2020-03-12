@@ -1,7 +1,8 @@
 <section class="results">
   <div class="container">
     <div>
-      <h3>List of Results</h3>
+       <% results = Product.where("name ILIKE ?", "%#{params[:product]}%") %>
+      <h3><%= results.count  =%> products</h3>
     </div>
     <div class="row">
       <% @products.each do |product| %>
