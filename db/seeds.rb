@@ -425,7 +425,9 @@ Branch.create(address: 'E14 4QT', supermarket: waitrose)
 Branch.create(address: 'E15 1HP', supermarket: sainsburys)
 #Branch.create(address:'SW8 2LF', supermarket: waitrose)
 #Branch.create(address: 'E17 7AD', supermarket: tesco)
-
+Branch.create(address: 'EC1V 4DE', supermarket: waitrose)
+Branch.create(address: 'EC1Y 8NX', supermarket: waitrose)
+Branch.create(address: 'N1 9EN', supermarket: waitrose)
 
 #Branch.create(address: 'SW1Y 4LR', supermarket: tesco)
 #Branch.create(address: 'SW1A 2JR', supermarket: tesco)
