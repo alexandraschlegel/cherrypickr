@@ -21,6 +21,7 @@ puts "create #{tesco}, #{waitrose} and #{sainsburys}"
 ocado = Supermarket.create!(name: "Ocado", website: "https://www.ocado.com", image:'ocado.png')
 asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com", image:'asda.png')
 morrisons = Supermarket.create!(name: "Morrisons", website: "https://www.morrisons.com", image:'morrisons.png')
+iceland = Supermarket.create!(name: "Iceland", website: "https://www.iceland.co.uk/", image:'iceland.png')
 
 User.create!(email: "clara@gmail.com", password: "123456", location: "E2 8HZ", distance: 2)
 
@@ -62,11 +63,22 @@ end
 
 
 # waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com")
-seed_products = [{price: '£0.85', name: 'Oatly Foamable 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
-{price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.85', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
-{price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£2.05', name: 'Rude Health oat drink'}, {price: '£2.00', name: 'Plenish Oat+ Enriched'},
-{price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.55', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+seed_products = [{price: '£0.85', name: 'Oatly Foamable 1 Litre'},
+                {price: '£1.85', name: 'Oatly Oat Drink Whole 1 Litre'},
+                {price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre'},
+                {price: '£1.85', name: 'Oatly Oat Drink Low Fat'},
+                {price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml'},
+                {price: '£1.65', name: 'Alpro Oat Drink Alternative 1 Litre'},
+                {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
+                {price: '£2.00', name: 'Innocent Oat Dairy Free 750Ml'},
+                {price: '£2.05', name: 'Rude Health oat drink'},
+                {price: '£2.00', name: 'Plenish Oat+ Enriched'},
+                {price: '£1.60', name: 'Alpro Chocolate Oat Drink'},
+                {price: '£1.55', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'},
+                {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+                {price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'},
+                {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'},
+                {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
  seed_products.each do |seed_product|
   if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -76,11 +88,22 @@ end
 
 
 # sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
-seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
-{price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
-{price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
-{price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£2.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'},
+                    {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
+                    {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'},
+                    {price: '£1.80', name: 'Oatly Oat Drink Low Fat'},
+                    {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'},
+                    {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},
+                    {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
+                    {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'},
+                    {price: '£1.50', name: 'Rude Health oat drink'},
+                    {price: '£1.55', name: 'Plenish Oat+ Enriched'},
+                    {price: '£1.60', name: 'Alpro Chocolate Oat Drink'},
+                    {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'},
+                    {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'},
+                    {price: '£2.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
   seed_products_2.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -168,7 +191,51 @@ seed_products_4 = [
 end
 
 
+seed_products_101 = [{price: '£1.70', name: 'Oatly Foamable 1 Litre'},
+                    {price: '£1.70', name: 'Oatly Oat Drink Whole 1 Litre'},
+                    {price: '£1.70', name: 'Oatly Oat Drink Semi 1 Litre'},
+                    {price: '£1.70', name: 'Oatly Oat Drink Low Fat'},
+                    {price: '£1.20', name: 'Alpro Oat Unsweetened 1000 Ml'},
+                    {price: '£1.20', name: 'Alpro Oat Drink Alternative 1 Litre'},
+                    {price: '£1.50', name: 'Plenish Organic Oat M*lk'},
+                    {price: '£1.20', name: 'Innocent Oat Dairy Free 750Ml'},
+                    {price: '£1.45', name: 'Rude Health oat drink'},
+                    {price: '£1.50', name: 'Plenish Oat+ Enriched'},
+                    {price: '£1.55', name: 'Alpro Chocolate Oat Drink'},
+                    {price: '£0.99', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.45', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.40', name: 'Oatly H healthy oat dairy-free chocolate'},
+                    {price: '£1.20', name: 'Alpro Unsweetened Oat Drink 1L'},
+                    {price: '£2.4O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+  seed_products_101.each do |seed_product|
+   if Product.where(name: seed_product[:name]).length > 0
+    image_src = Product.where(name: seed_product[:name])[0].image
+    Product.create(supermarket: morrisons, image: image_src, price: seed_product[:price], name: seed_product[:name])
+  end
+end
 
+seed_products_102 = [{price: '£1.75', name: 'Oatly Foamable 1 Litre'},
+                    {price: '£1.75', name: 'Oatly Oat Drink Whole 1 Litre'},
+                    {price: '£1.75', name: 'Oatly Oat Drink Semi 1 Litre'},
+                    {price: '£1.75', name: 'Oatly Oat Drink Low Fat'},
+                    {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'},
+                    {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},
+                    {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
+                    {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'},
+                    {price: '£1.50', name: 'Rude Health oat drink'},
+                    {price: '£1.55', name: 'Plenish Oat+ Enriched'},
+                    {price: '£1.60', name: 'Alpro Chocolate Oat Drink'},
+                    {price: '£1.10', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.49', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
+                    {price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'},
+                    {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'},
+                    {price: '£2.45', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+  seed_products_102.each do |seed_product|
+   if Product.where(name: seed_product[:name]).length > 0
+    image_src = Product.where(name: seed_product[:name])[0].image
+    Product.create(supermarket: iceland, image: image_src, price: seed_product[:price], name: seed_product[:name])
+  end
+end
 
 # asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com")
 # seed_products_5 = [{price: '£0.65', name: 'Growers Harvest Porridge Oats'}, {price: '£1.00', name: 'Quaker Oat So Simple Golden Syrup Porridge 57G'},
