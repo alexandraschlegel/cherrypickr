@@ -2,18 +2,24 @@
 require "open-uri"
 require "nokogiri"
 
+Branch.destroy_all
+UserProduct.destroy_all
 Product.destroy_all
 Supermarket.destroy_all
-Branch.destroy_all
+User.destroy_all
+Deal.destroy_all
 
 
 # Supermarkets
+puts 'creating supermarkets!'
 tesco = Supermarket.create!(name: "Tesco", website: "https://www.tesco.com", image: 'tesco.png')
 waitrose = Supermarket.create!(name: "Waitrose", website: "https://www.waitrose.com", image:'waitrose.png')
 sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com", image:'Sainsburys.png')
+
+puts "create #{tesco}, #{waitrose} and #{sainsburys}"
+
 asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com", image:'morrisons.png')
 morrisons = Supermarket.create!(name: "Morrisons", website: "https://www.morrisons.com", image:'morrisons.png')
-
 
 # base_url = "https://www.tesco.com/groceries/en-GB/shop/fresh-food/all"
 
@@ -37,15 +43,16 @@ tesco_urls.each do |url|
  # Tesco
 
 doc = Nokogiri::HTML(open(url))
-doc.search(".tile-content").each do |result_card|
-  prod_name = result_card.search("h3").text
-  price = result_card.search(".price-per-sellable-unit").text
-  # p description = result_card.search(".product-info-block__content-item").text
-  # offer = result_card.search(".offer-text").text
-  # date = result_card.search(".dates").text
-  image_src = result_card.search(".product-image").attr('src').value
-  Product.create!(supermarket: tesco, image: image_src, price: price, name: prod_name)
-end
+  doc.search(".tile-content").each do |result_card|
+    prod_name = result_card.search("h3").text
+    price = result_card.search(".price-per-sellable-unit").text
+    # p description = result_card.search(".product-info-block__content-item").text
+    # offer = result_card.search(".offer-text").text
+    # date = result_card.search(".dates").text
+    image_src = result_card.search(".product-image").attr('src').value
+    product = Product.create!(supermarket: tesco, image: image_src, price: price, name: prod_name)
+    puts "created #{product.name}"
+  end
 end
 
 
@@ -336,80 +343,75 @@ end
 #      Product.create(supermarket: Waitrose, price: seed_product[:price], name: seed_product[:name])
 #    end
 # end
+puts "creating branches"
+
+Branch.create(address:'E2 8DY', supermarket: tesco)
+Branch.create(address:'W1D 3RF', supermarket: tesco)
+Branch.create(address:'SW1V 1DT', supermarket: sainsburys)
+Branch.create(address:'E14 4QT', supermarket: waitrose)
+Branch.create(address:'SE17 2DL', supermarket: waitrose)
+Branch.create(address:'SE1 5AG', supermarket: tesco)
+Branch.create(address:'E15 1HP', supermarket: sainsburys)
+Branch.create(address:'SW8 2LF', supermarket: waitrose)
+Branch.create(address:'E17 7AD', supermarket: tesco)
 
 
-Branch.create(address:'E2 8DY London', supermarket: tesco)
-Branch.create(address:'W1D 3RF London', supermarket: tesco)
-Branch.create(address:'SW1V 1DT London', supermarket: sainsburys)
-Branch.create(address:'E14 4QT London', supermarket: waitrose)
-Branch.create(address:'SE17 2DL London', supermarket: waitrose)
-Branch.create(address:'SE1 5AG London', supermarket: tesco)
-Branch.create(address:'E15 1HP London', supermarket: sainsburys)
-Branch.create(address:'SW8 2LF London', supermarket: waitrose)
-Branch.create(address:'E17 7AD London', supermarket: tesco)
+Branch.create(address: 'SW1Y 4LR', supermarket: tesco)
+Branch.create(address: 'SW1A 2JR', supermarket: tesco)
+Branch.create(address: 'W1J 7UP', supermarket: tesco)
+Branch.create(address: 'WC2R 0AP', supermarket: tesco)
+Branch.create(address: 'WC2R 0AP', supermarket: tesco)
+Branch.create(address: 'WC2R 0AP', supermarket: tesco)
+Branch.create(address: 'SE1 7AA', supermarket: tesco)
+Branch.create(address: 'SE1 8UL', supermarket: tesco)
+Branch.create(address: 'SW1P 2BW', supermarket: tesco)
+Branch.create(address: 'W1D 3RF', supermarket: tesco)
+Branch.create(address: 'WC2R 0AP', supermarket: tesco)
+
+Branch.create(address: 'N1 6AA', supermarket: tesco)
+Branch.create(address: 'N1 3JE', supermarket: tesco)
+Branch.create(address: 'E8 4DG', supermarket: tesco)
+Branch.create(address: 'E2 7QU', supermarket: tesco)
+Branch.create(address: 'N1 8SY', supermarket: tesco)
+Branch.create(address: 'N1 2EB', supermarket: tesco)
+Branch.create(address: 'E1 6HP', supermarket: tesco)
+Branch.create(address: 'N1 8DU', supermarket: tesco)
+Branch.create(address: 'EC1V 3AF', supermarket: tesco)
+Branch.create(address: 'EC1Y 1AG', supermarket: tesco)
+
+Branch.create(address: 'EC1V 9EY', supermarket: sainsburys)
+Branch.create(address: 'E2 8DJ', supermarket: sainsburys)
+Branch.create(address: 'EC1Y 1BD', supermarket: sainsburys)
+Branch.create(address: 'EC1V 1NR', supermarket: sainsburys)
+Branch.create(address: 'E1 6HZ', supermarket: sainsburys)
+Branch.create(address: 'E2 7SJ', supermarket: sainsburys)
 
 
-Branch.create(address: 'SW1Y 4LR London', supermarket: tesco)
-Branch.create(address: 'SW1A 2JR London', supermarket: tesco)
-Branch.create(address: 'W1J 7UP London', supermarket: tesco)
-Branch.create(address: 'WC2R 0AP London', supermarket: tesco)
-Branch.create(address: 'WC2R 0AP London', supermarket: tesco)
-Branch.create(address: 'WC2R 0AP London', supermarket: tesco)
-Branch.create(address: 'SE1 7AA London', supermarket: tesco)
-Branch.create(address: 'SE1 8UL London', supermarket: tesco)
-Branch.create(address: 'SW1P 2BW London', supermarket: tesco)
-Branch.create(address: 'W1D 3RF London', supermarket: tesco)
-Branch.create(address: 'WC2R 0AP London', supermarket: tesco)
+Branch.create(address: 'W1A 1EX', supermarket: waitrose)
+Branch.create(address: 'SW1E 6QP', supermarket: waitrose)
+Branch.create(address: 'SW1V 1QT', supermarket: waitrose)
+Branch.create(address: 'SW1E 5DH', supermarket: waitrose)
+Branch.create(address: 'SE1 9LS', supermarket: waitrose)
+Branch.create(address: 'WC1V 7EX', supermarket: waitrose)
 
-Branch.create(address: 'N1 6AA London', supermarket: tesco)
-Branch.create(address: 'N1 3JE London', supermarket: tesco)
-Branch.create(address: 'E8 4DG London', supermarket: tesco)
-Branch.create(address: 'E2 7QU London', supermarket: tesco)
-Branch.create(address: 'N1 8SY London', supermarket: tesco)
-Branch.create(address: 'N1 2EB London', supermarket: tesco)
-Branch.create(address: 'E1 6HP London', supermarket: tesco)
-Branch.create(address: 'N1 8DU London', supermarket: tesco)
-Branch.create(address: 'EC1V 3AF London', supermarket: tesco)
-Branch.create(address: 'EC1Y 1AG London', supermarket: tesco)
-
-Branch.create(address: 'EC1V 9EY London', supermarket: sainsburys)
-Branch.create(address: 'E2 8DJ London', supermarket: sainsburys)
-Branch.create(address: 'EC1Y 1BD London', supermarket: sainsburys)
-Branch.create(address: 'EC1V 1NR London', supermarket: sainsburys)
-Branch.create(address: 'E1 6HZ London', supermarket: sainsburys)
-Branch.create(address: 'E2 7SJ London', supermarket: sainsburys)
-Branch.create(address: 'E1  London', supermarket: sainsburys)
-Branch.create(address: 'N1 8 London', supermarket: sainsburys)
-Branch.create(address: 'EC1V 3 London', supermarket: sainsburys)
-Branch.create(address: 'EC1Y 1 London', supermarket: sainsburys)
-Branch.create(address:'E15 1 London', supermarket: sainsburys)
-
-Branch.create(address: 'W1A 1EX London', supermarket: waitrose)
-Branch.create(address: 'SW1E 6QP London', supermarket: waitrose)
-Branch.create(address: 'SW1V 1QT London', supermarket: waitrose)
-Branch.create(address: 'SW1E 5DH London', supermarket: waitrose)
-Branch.create(address: 'SE1 9LS London', supermarket: waitrose)
-Branch.create(address: 'WC1V 7EX London', supermarket: waitrose)
-
-
-Branch.create(address: 'E1 5BW London', supermarket: asda)
-Branch.create(address: 'E1 4UJ London', supermarket: asda)
-Branch.create(address: 'SE1 5AG London', supermarket: asda)
-Branch.create(address: 'E10 5NH London', supermarket: asda)
-Branch.create(address: 'N15 4QD London', supermarket: asda)
-Branch.create(address: ' N17 9JF London', supermarket: asda)
+Branch.create(address: 'E1 5BW', supermarket: asda)
+Branch.create(address: 'E1 4UJ', supermarket: asda)
+Branch.create(address: 'SE1 5AG', supermarket: asda)
+Branch.create(address: 'E10 5NH', supermarket: asda)
+Branch.create(address: 'N15 4QD', supermarket: asda)
+Branch.create(address: ' N17 9JF', supermarket: asda)
 
 
 
-Branch.create(address: 'N7 6PL London', supermarket: morrisons)
-Branch.create(address: 'N16 5TB London', supermarket: morrisons)
-Branch.create(address: 'NW1 8AA London', supermarket: morrisons)
-Branch.create(address: 'SE17 2DLLondon', supermarket: morrisons)
-Branch.create(address: 'E15 1HP London', supermarket: morrisons)
-Branch.create(address: 'SE5 8RR London', supermarket: morrisons)
-Branch.create(address: 'SE15 5EW London', supermarket: morrisons)
-Branch.create(address: 'E16 1ED London', supermarket: morrisons)
-Branch.create(address: 'N22 6SU London', supermarket: morrisons)
+Branch.create(address: 'N7 6PL', supermarket: morrisons)
+Branch.create(address: 'N16 5TB', supermarket: morrisons)
+Branch.create(address: 'NW1 8AA', supermarket: morrisons)
+Branch.create(address: 'SE17 2DL', supermarket: morrisons)
+Branch.create(address: 'E15 1HP', supermarket: morrisons)
+Branch.create(address: 'SE5 8RR', supermarket: morrisons)
+Branch.create(address: 'SE15 5EW', supermarket: morrisons)
+Branch.create(address: 'E16 1ED', supermarket: morrisons)
+Branch.create(address: 'N22 6SU', supermarket: morrisons)
 
 
 
@@ -643,4 +645,4 @@ puts "successful seed!"
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.85', name: 'Oatly Oat Drink Semi 1 Litre')
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.85', name: 'Oatly Oat Drink Low Fat')
 # Product.create!(supermarket: waitrose, image: image_src, price: '£1.65', name: 'Alpro Oat Unsweetened 1000 Ml')
-
+puts "done!"

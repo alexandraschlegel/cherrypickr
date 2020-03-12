@@ -18,7 +18,11 @@ if (check) {
   });
 }
 
-initMapbox();
+
+// document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+// });
+
 
 
 if (document.querySelector('.modal-content') != null) {
