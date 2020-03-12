@@ -1,16 +1,12 @@
 body.landing {
-  // background-image: url('../images/bg-angle-landing.png');
-  background-image: url(asset_path(“../assets/bg-angle-landing.png"));
+  background-image: url(asset_path("bg-angle-landing.png"));
   background-repeat: no-repeat;
   background-position: 0 -40px;
   background-color: #ffffff;
 }
-
 body.inner {
-  background-image: url(asset_path(“../assets/bg-inner-top.png"));
+  background-image: url(asset_path("bg-inner-top.png"));
   background-repeat: no-repeat;
   background-position: 0 0px;
   background-color: #ffffff;
 }
-
-
