@@ -15,6 +15,16 @@ class ProductsController < ApplicationController
     @product = Product.find (params[:id])
     @other_ones = Product.where(name: @product.name)
     @user_product = UserProduct.new
+
+    # map creation stuff
+    supermarket = @product.supermarket
+    @markers = []
+    supermarket.branches.each do |branch|
+      @markers << {
+        lng: branch.longitude,
+        lat: branch.latitude
+      }
+    end
   end
 
 end
