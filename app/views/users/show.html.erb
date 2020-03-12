@@ -1,31 +1,12 @@
 <div class="container">
   <div class="profile-page">
     <h2>Your Profile</h2>
-      <div class="container-profile-2">
-        <h3>Your Watchlist Items</h3>
-          <div class="flex-box">
-            <div class="row">
-              <% @products.each do |product| %>
-
-                <div class="col-md-3">
-                  <div class="card-index mb-3 ml-3 p-3" style="border-radius:20px">
-                    <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
-                      <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
-                      <p class="text-center mb-3"><strong>Cheapest price:</strong> <strong><%=product.price%></strong>
-                      <span class="spmkt-img-2"><%= image_tag product.supermarket.image%>
-                  </div>
-                </div>
-               <% end %>
-            </div>
-         </div>
-      </div>
       <div class="container-profile">
-        <h4>Your Settings</h4>
-        <h5> Your current location is: <em>Hoxton</em> with range:<em> 5km </em> </h5>
-        <h4>Add Another Location</h4>
         <div class="row">
           <div class ="col-6">
-             <%#= render 'edit', user: @user %>
+            <h4>Your Settings</h4>
+            <h5> Your current location is: <em>Hoxton</em> with range:<em> 5km </em> </h5>
+            <h4>Add Another Location</h4>
              <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
                <div class="search-boxes-inline d-flex">
                  <%= text_field_tag :query,
@@ -38,9 +19,7 @@
          <!--  <div class ="container d-flex" id="map"
            style="width: 40%;
            border-radius: 16px;
-           height: 500px;
-           margin-top: -24px;
-           margin-left: 20px;"
+           height: 500px;"
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
           </div> -->
@@ -56,9 +35,24 @@
 
         </div>
       </div>
+
+      <div class="container-profile-2">
+        <h3>Your Watchlist Items</h3>
+          <div class="flex-box">
+            <div class="row">
+              <% @products.each do |product| %>
+                <div class="col-md-3">
+                  <div class="card-index mb-3 ml-3 p-3" style="border-radius:20px">
+                    <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
+                      <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
+            <!--             <p class="mb-2" style="width: 170px"><%= product.supermarket.name%></p> -->
+                      <p class="text-center mb-3"><strong>Cheapest price:</strong> <strong><%=product.price%></strong>
+                      <span class="spmkt-img-2"><%= image_tag product.supermarket.image%>
+                  </div>
+                </div>
+               <% end %>
+            </div>
+         </div>
+      </div>
   </div>
 </div>
-
-
-
-
