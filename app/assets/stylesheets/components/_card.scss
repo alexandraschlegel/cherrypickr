@@ -108,6 +108,7 @@ color: #743038;
 .modal-body {
   text-align: center;
   width: 100%;
+  font-family: Quicksand;
 }
 .product-show-container h3{
  color:red;
@@ -213,9 +214,6 @@ line-height: 140%;
   margin-right: 20px;
 }
 
-
-
-
 .other-products-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -269,7 +267,6 @@ line-height: 140%;
     height: 35px;
 }
 
-
  .card-product-price {
      font-size: 20px;
      font-weight: bold;
@@ -286,5 +283,12 @@ line-height: 140%;
  max-width: 1127px;
  margin: auto;
  margin-top: 16px;
+}
+
+.close-btn {
+ border: none;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
 }
 
