@@ -4,3 +4,14 @@
     margin-top: 80px;
     margin-bottom: 32px
   }
+
+.profiles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-picture {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
