@@ -13,6 +13,7 @@
 
 .product-container .product-wrapper {
   margin-top: 30px;
+  margin-bottom: -169px;
 }
 
 .product-container .product-wrapper .product-image {
@@ -58,6 +59,11 @@
   margin-left: 0px;
   margin-top: 20px;
 }
+
+.product-show-details img {
+    /* height: 36px; */
+    width: 100px;
+  }
 
 .product-container .product-description {
   margin-top: 10px;

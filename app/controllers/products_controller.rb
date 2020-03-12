@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find (params[:id])
-    @other_ones = Product.where(name: @product.name)
+    @other_ones = Product.where(name: @product.name).reject{|r| r == @product}
     @user_product = UserProduct.new
 
     # map creation stuff
@@ -26,5 +26,6 @@ class ProductsController < ApplicationController
       }
     end
   end
-
 end
+
+
