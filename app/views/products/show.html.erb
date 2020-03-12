@@ -33,12 +33,14 @@
           </div>
         </div>
         <!-- right section -->
-          <div class="container"
+        <div class="product-map" id="map"
           style="width: 40%;
-       border-radius: 10px;
-       height: 500px">
-        <%= image_tag 'map.png', width: 400%>
+          border-radius: 10px;
+          height: 500px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+
     </div>
   </div>
 </div>
@@ -58,7 +60,6 @@
         <div class="bottom-container">
           <div class="other-products-wrapper">
             <% @other_ones.each do |other_product| %>
-              <%# raise %>
             <div class="card-left">
                 <%= image_tag other_product.image, alt: "alttext" %>
                 <div class="card-info">
