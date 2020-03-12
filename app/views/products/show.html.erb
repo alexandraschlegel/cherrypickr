@@ -79,6 +79,7 @@
       </div>
     </div>
 
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-confetti" role="document">
@@ -94,7 +95,8 @@
       <div class="modal-body">
         <% if @product.user_products.map { |e| e.user_id }.include?(current_user.id) %>
           <h5>Your Price alert is all set</h5><br>
-          <%= link_to "See all your price alerts!", user_path(current_user), class: "btn"  %>
+          <%#= link_to "See all your price alerts!", user_path(current_user), class: "btn"  %>
+          <%= link_to "See all your price alerts!", user_path(current_user), class: "btn", id:"test" %>
           <br>
         <% else %>
           <h5>Your Price alert is all set</h5><br>
