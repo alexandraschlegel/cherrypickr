@@ -2,12 +2,12 @@
 //import mapbox
 import mapboxgl from 'mapbox-gl';
 
-const mapElement = document.getElementById('map');
+const mapElement = document.getElementById('user-map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
-    container: 'map',
+    container: 'user-map',
     style: 'mapbox://styles/mapbox/streets-v10'
   });
 };
@@ -27,14 +27,15 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 10 });
 };
 
-const initMapbox = () => {
+const initUsermap= () => {
+  console.log("USER MAAAAP")
   if (mapElement) {
+    console.log("map element")
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
-    console.log(markers)
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
 
-export { initMapbox };
+export { initUsermap };

@@ -9,6 +9,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal
 import Typed from 'typed.js';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initUsermap } from '../plugins/init_usermap';
 
 let check = document.querySelector(".typed")
 if (check) {

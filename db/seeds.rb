@@ -22,7 +22,7 @@ ocado = Supermarket.create!(name: "Ocado", website: "https://www.ocado.com", ima
 asda = Supermarket.create!(name: "Asda", website: "https://www.asda.com", image:'asda.png')
 morrisons = Supermarket.create!(name: "Morrisons", website: "https://www.morrisons.com", image:'morrisons.png')
 
-User.create!(email: "clara@gmail.com", password: "123456", location: "E2 8DY", distance: 2)
+User.create!(email: "clara@gmail.com", password: "123456", location: "E2 8HZ", distance: 2)
 
 
 

@@ -4,9 +4,9 @@ class UsersController < ApplicationController
     @user = current_user
     @products = @user.products
 
-    if !params[:query].nil?
-      if params[:query].match?(/\d/)
-        @branches = Branch.near(params[:query], 5)
+    unless params[:query].nil?
+      if params[:query]
+        @branches = Branch.near(params[:query], 500)
         if @branches.any?
           @markers = @branches.map do |branch|
             # if branch.longitude.nil? || branch.latitude.nil?
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       if params[:query].present? && ["Tesco", "Waitrose", "Sainsburys"].include?(params[:query])
         @branches = Supermarket.where(name: params[:query]).first.branches
         # raise
-        Branch.near(current_user.location, 1)
+        Branch.near(current_user.location, 500)
         if @branches.any?
           @markers = @branches.map do |branch|
             # if branch.longitude.nil? || branch.latitude.nil?
