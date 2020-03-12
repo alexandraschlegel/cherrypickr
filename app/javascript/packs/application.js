@@ -14,7 +14,8 @@ import { initUsermap } from '../plugins/init_usermap';
 let check = document.querySelector(".typed")
 if (check) {
   var typed = new Typed('.typed', {
-    strings: [" GET YOUR PRICE ALERT NOW.", "WHAT ITEM DO YOU WANT TO SEARCH FOR.", " "],
+    strings: [" GET YOUR PRICE ALERT NOW.", "WHAT ITEM DO YOU WANT TO SEARCH FOR?", "SO TELL ME WHAT YOU WANT", "WHAT YOU REALLY REALLY WANT!",
+     "I'LL TELL YOU WHAT I WANT WHAT I REALLY, REALLY WANT", "Enter your product here"],
     typeSpeed: 45
   });
 }
@@ -211,4 +212,20 @@ class Confetti {
 })();
 
 }
+
+//const testFunction = () => {
+  //console.log("test")
+  //document.getElementById("blinking").style.display = "block";
+
+//}
+//window.setTimeout(testFunction, 20000)
+// testFunction();
+// setTimeout("showIt2()", 1000)
+
+
+// use a query selector to find the blinky thing and set it to a variable
+// use a query selector to find the input search box and set that to a variable
+// add an event listner to the input search box which listens for when someone clicks on it
+// within that event listener you should change the class of the blinky thing using classList
+// the new class should hide the blinky thing using the CSS property 'display: none;'
 
