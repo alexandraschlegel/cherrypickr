@@ -7,14 +7,16 @@
             <h4>Your Settings</h4>
             <h5> Your current location is: <em>Hoxton</em> with range:<em> 5km </em> </h5>
             <h4>Add Another Location</h4>
-             <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
-               <div class="search-boxes-inline d-flex">
+              <%= form_tag user_path(current_user), method: :get, class: "user-form d-flex" do %>
                  <%= text_field_tag :query,
-                 params[:query],
-                 placeholder: "Enter Supermarket"
+                   params[:query],
+                   class: "no-border userbar",
+                   placeholder: "Enter Supermarket"
                  %>
+
+                 <%= button_tag "Click Here", class: "btn btn-primary rounded" %>
+
               <% end %>
-               </div>
           </div>
          <!--  <div class ="container d-flex" id="map"
            style="width: 40%;
