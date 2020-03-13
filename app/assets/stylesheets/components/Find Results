@@ -1,0 +1,566 @@
+Searching 206 files for "faq"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/yarn.lock:
+ 2297    version "4.0.1"
+ 2298    resolved "https://registry.yarnpkg.com/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.1.tgz#574082fb2859d2db433855835d9a8456ea18bbf3"
+ 2299:   integrity sha512-WcKx5OY+KoSIAxBW6UBBRay1U6vkYheCdjyVNDm85zt5K9mHoGOfsOsqIszfAqrQQFIIKgjh2+FDgIj/zsl21Q==
+ 2300
+ 2301  cssnano@^4.1.10:
+ 2302    version "4.1.10"
+ 2303    resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.10.tgz#0ac41f0b13d13d465487e111b778d42da631b8b2"
+ 2304:   integrity sha512-5wny+F6H4/8RgNlaqab4ktc3e0/blKutmq8yNlBFXA//nSFFAqAngjNVRzUvCgYROULmZZUoosL/KSoZo5aUaQ==
+ 2305    dependencies:
+ 2306      cosmiconfig "^5.0.0"
+ ....
+ 3873    version "1.0.3"
+ 3874    resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.3.tgz#38e1014b9e6329be0de9d24a414fd7441ec61937"
+ 3875:   integrity sha512-OwijhaRSgqvhm/0ZdAcXNZt9lYdKFpcRDT5ULUuYXPoT794UNOdU+gpT6Rzo7b4V2HUl/op6GqY894AZwv9faQ==
+ 3876    dependencies:
+ 3877      has-symbols "^1.0.1"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/pages_controller.rb:
+    4    def home
+    5    end
+    6: #additions for faq and about pages
+    7    def about
+    8    end
+    9
+   10:   def faq
+   11    end
+   12  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/pages/home.html.erb:
+   36          <a href="#"><i class="fab fa-facebook"></i></a>
+   37          <a href="#"><i class="fab fa-twitter"></i></a>
+   38:         <%= link_to "FAQ", pages_faq_path %>
+   39          <%= link_to "About us", pages_about_path %>
+   40        </div>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/routes.rb:
+    3    root to: 'pages#home'
+    4    get 'pages/about', to: 'pages#about'
+    5:   get 'pages/faq', to: 'pages#faq'
+    6
+    7
+
+9 matches across 4 files
+
+
+Searching 206 files for "application"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config.ru:
+    1: # This file is used by Rack-based servers to start the application.
+    2
+    3  require_relative 'config/environment'
+    4
+    5: run Rails.application
+    6
+
+/Users/ravi/code/Priyesh2109/cherrypickr/Rakefile:
+    2  # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+    3
+    4: require_relative 'config/application'
+    5
+    6: Rails.application.load_tasks
+    7
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/assets/stylesheets/README.md:
+   42
+   43  ```html
+   44: <!-- app/views/layouts/application.html.erb -->
+   45  <head>
+   46    <!-- Add these line for detecting device width -->
+   ..
+   76
+   77  ```js
+   78: // app/javascript/packs/application.js
+   79  import 'bootstrap';
+   80  ```
+   81: And add this to `application.html.erb`
+   82  ```erb
+   83: <!-- app/views/layouts/application.html.erb -->
+   84
+   85    <!-- [...] -->
+   86
+   87:   <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+   88:   <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+   89  </body>
+   90  ```
+   91  ## Adding new `.scss` files
+   92
+   93: Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
+   94
+   95  ```scss
+   96: // app/assets/stylesheets/application.scss
+   97
+   98  // Graphical variables
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/channels/application_cable/channel.rb:
+    1: module ApplicationCable
+    2    class Channel < ActionCable::Channel::Base
+    3    end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/channels/application_cable/connection.rb:
+    1: module ApplicationCable
+    2    class Connection < ActionCable::Connection::Base
+    3    end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/application_controller.rb:
+    1: class ApplicationController < ActionController::Base
+    2    before_action :authenticate_user!
+    3    def default_url_options
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/deals_controller.rb:
+    1: class DealsController < ApplicationController
+    2  end
+    3
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/pages_controller.rb:
+    1: class PagesController < ApplicationController
+    2    skip_before_action :authenticate_user!, only: [:home]
+    3
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/products_controller.rb:
+    1: class ProductsController < ApplicationController
+    2
+    3    skip_before_action :authenticate_user!, only: [:index]
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/supermarkets_controller.rb:
+    1: class SupermarketsController < ApplicationController
+    2    def show
+    3
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/user_products_controller.rb:
+    1: class UserProductsController < ApplicationController
+    2
+    3    def new
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/users_controller.rb:
+    1: class UsersController < ApplicationController
+    2
+    3    def show
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/helpers/application_helper.rb:
+    1: module ApplicationHelper
+    2  end
+    3
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/jobs/application_job.rb:
+    1: class ApplicationJob < ActiveJob::Base
+    2    # Automatically retry jobs that encountered a deadlock
+    3    # retry_on ActiveRecord::Deadlocked
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/mailers/application_mailer.rb:
+    1: class ApplicationMailer < ActionMailer::Base
+    2    default from: 'hello@cherrypickr.co.uk'
+    3    layout 'mailer'
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/mailers/user_mailer.rb:
+    1: class UserMailer < ApplicationMailer
+    2
+    3    # Subject can be set in your I18n file at config/locales/en.yml
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/application_record.rb:
+    1: class ApplicationRecord < ActiveRecord::Base
+    2    self.abstract_class = true
+    3  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/branch.rb:
+    1: class Branch < ApplicationRecord
+    2    belongs_to :supermarket
+    3
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/deal.rb:
+    1: class Deal < ApplicationRecord
+    2    belongs_to :supermarket
+    3    belongs_to :product
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/product.rb:
+    1: class Product < ApplicationRecord
+    2    has_many :deals
+    3    belongs_to :supermarket
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/supermarket.rb:
+    1: class Supermarket < ApplicationRecord
+    2    has_many :products, dependent: :destroy
+    3    has_many :deals
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/user.rb:
+    1: class User < ApplicationRecord
+    2    # Include default devise modules. Others available are:
+    3    # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/models/user_product.rb:
+    1: class UserProduct < ApplicationRecord
+    2    belongs_to :user
+    3    belongs_to :product
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/layouts/application.html.erb:
+    7      <%= csrf_meta_tags %>
+    8      <%= action_cable_meta_tag %>
+    9:     <%= stylesheet_link_tag 'application', media: 'all' %>
+   10
+   11     <%= favicon_link_tag %>
+   12
+   13:     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+   14
+   15      <!--Start - Additions for Open graph meta tags-->
+   ..
+   41    <%= yield %>
+   42
+   43:     <%= javascript_pack_tag 'application' %>
+   44    </body>
+   45  </html>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/bin/bundle:
+    5  # This file was generated by Bundler.
+    6  #
+    7: # The application 'bundle' is installed as part of a gem, and
+    8  # this file is here to facilitate running it.
+    9  #
+
+/Users/ravi/code/Priyesh2109/cherrypickr/bin/rails:
+    5    raise unless e.message.include?('spring')
+    6  end
+    7: APP_PATH = File.expand_path('../config/application', __dir__)
+    8  require_relative '../config/boot'
+    9  require 'rails/commands'
+
+/Users/ravi/code/Priyesh2109/cherrypickr/bin/rake:
+    7  require_relative '../config/boot'
+    8  require 'rake'
+    9: Rake.application.run
+   10
+
+/Users/ravi/code/Priyesh2109/cherrypickr/bin/setup:
+    2  require 'fileutils'
+    3
+    4: # path to your application root.
+    5  APP_ROOT = File.expand_path('..', __dir__)
+    6
+    .
+   32    system! 'bin/rails log:clear tmp:clear'
+   33
+   34:   puts "\n== Restarting application server =="
+   35    system! 'bin/rails restart'
+   36  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/application.rb:
+    8
+    9  module Cherrypickr
+   10:   class Application < Rails::Application
+   11      config.generators do |generate|
+   12            generate.assets false
+   ..
+   18
+   19      # Settings in config/environments/* take precedence over those specified here.
+   20:     # Application configuration can go into files in config/initializers
+   21      # -- all .rb files in that directory are automatically loaded after loading
+   22:     # the framework and any gems in your application.
+   23    end
+   24  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/environment.rb:
+    1: # Load the Rails application.
+    2: require_relative 'application'
+    3
+    4: # Initialize the Rails application.
+    5: Rails.application.initialize!
+    6
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/puma.rb:
+   22  # Specifies the number of `workers` to boot in clustered mode.
+   23  # Workers are forked web server processes. If using threads and workers together
+   24: # the concurrency of the application would be max `threads` * `workers`.
+   25  # Workers do not work on JRuby or Windows (both of which do not support
+   26  # processes).
+   ..
+   29
+   30  # Use the `preload_app!` method when specifying a `workers` number.
+   31: # This directive tells Puma to first boot the application and load code
+   32: # before forking the application. This takes advantage of Copy On Write
+   33  # process behavior so workers use less memory.
+   34  #
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/routes.rb:
+    1: Rails.application.routes.draw do
+    2    devise_for :users
+    3    root to: 'pages#home'
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/storage.yml:
+   10  # amazon:
+   11  #   service: S3
+   12: #   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+   13: #   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+   14  #   region: us-east-1
+   15  #   bucket: your_own_bucket
+   ..
+   26  #   service: AzureStorage
+   27  #   storage_account_name: your_account_name
+   28: #   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
+   29  #   container: your_container_name
+   30
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/environments/development.rb:
+    1: Rails.application.configure do
+    2    config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+    3:   # Settings specified here will take precedence over those in config/application.rb.
+    4
+    5:   # In the development environment your application's code is reloaded on
+    6    # every request. This slows down response time but is perfect for development
+    7    # since you don't have to restart the web server when you make code changes.
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/environments/production.rb:
+    1: Rails.application.configure do
+    2    config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+    3:   # Settings specified here will take precedence over those in config/application.rb.
+    4
+    5    # Code is not reloaded between requests.
+    .
+    7
+    8    # Eager load code on boot. This eager loads most of Rails and
+    9:   # your application in memory, allowing both threaded web servers
+   10    # and those relying on copy on write to perform better.
+   11    # Rake tasks automatically ignore this option for performance.
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/environments/test.rb:
+    1: # The test environment is used exclusively to run your application's
+    2  # test suite. You never need to work with it otherwise. Remember that
+    3  # your test database is "scratch space" for the test suite and is wiped
+    4  # and recreated between test runs. Don't rely on the data there!
+    5
+    6: Rails.application.configure do
+    7:   # Settings specified here will take precedence over those in config/application.rb.
+    8
+    9    config.cache_classes = false
+   10
+   11:   # Do not eager load code on boot. This avoids loading your whole application
+   12    # just for the purpose of running a single test. If you are using a tool that
+   13    # preloads Rails for running tests, you may have to set it to true.
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/application_controller_renderer.rb:
+    2
+    3  # ActiveSupport::Reloader.to_prepare do
+    4: #   ApplicationController.renderer.defaults.merge!(
+    5  #     http_host: 'example.org',
+    6  #     https: false
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/assets.rb:
+    2
+    3  # Version of your assets, change this if you want to expire all your assets.
+    4: Rails.application.config.assets.version = '1.0'
+    5
+    6  # Add additional assets to the asset load path.
+    7: # Rails.application.config.assets.paths << Emoji.images_path
+    8  # Add Yarn node_modules folder to the asset load path.
+    9: Rails.application.config.assets.paths << Rails.root.join('node_modules')
+   10
+   11  # Precompile additional assets.
+   12: # application.js, application.css, and all non-JS/CSS in the app/assets
+   13  # folder are already added.
+   14: # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+   15
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/content_security_policy.rb:
+    1  # Be sure to restart your server when you modify this file.
+    2
+    3: # Define an application-wide content security policy
+    4  # For further information see the following documentation
+    5  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+    6
+    7: # Rails.application.config.content_security_policy do |policy|
+    8  #   policy.default_src :self, :https
+    9  #   policy.font_src    :self, :https, :data
+   ..
+   20
+   21  # If you are using UJS then enable automatic nonce generation
+   22: # Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
+   23
+   24  # Set the nonce only to specific directives
+   25: # Rails.application.config.content_security_policy_nonce_directives = %w(script-src)
+   26
+   27  # Report CSP violations to a specified URI
+   28  # For further information see the following documentation:
+   29  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
+   30: # Rails.application.config.content_security_policy_report_only = true
+   31
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/cookies_serializer.rb:
+    3  # Specify a serializer for the signed and encrypted cookie jars.
+    4  # Valid options are :json, :marshal, and :hybrid.
+    5: Rails.application.config.action_dispatch.cookies_serializer = :json
+    6
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/devise.rb:
+   76    # config.http_authenticatable_on_xhr = true
+   77
+   78:   # The realm used in Http Basic Authentication. 'Application' by default.
+   79:   # config.http_authentication_realm = 'Application'
+   80
+   81    # It will change confirmation, password recovery and other workflows
+   ..
+   98
+   99    # When false, Devise will not attempt to reload routes on eager load.
+  100:   # This can reduce the time taken to boot the app but if your application
+  101:   # requires the Devise mappings to be loaded during boot time the application
+  102    # won't boot properly.
+  103    # config.reload_routes = true
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/initializers/filter_parameter_logging.rb:
+    2
+    3  # Configure sensitive parameters which will be filtered from the log file.
+    4: Rails.application.config.filter_parameters += [:password]
+    5
+
+/Users/ravi/code/Priyesh2109/cherrypickr/db/schema.rb:
+    7  # be faster and is potentially less error prone than running all of your
+    8  # migrations from scratch. Old migrations may fail to apply correctly if those
+    9: # migrations use external dependencies or application code.
+   10  #
+   11  # It's strongly recommended that you check this file into your version control system.
+
+/Users/ravi/code/Priyesh2109/cherrypickr/public/422.html:
+   62        <p>Maybe you tried to change something you didn't have access to.</p>
+   63      </div>
+   64:     <p>If you are the application owner check the logs for more information.</p>
+   65    </div>
+   66  </body>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/test/application_system_test_case.rb:
+    1  require "test_helper"
+    2
+    3: class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+    4    driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+    5  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/test/channels/application_cable/connection_test.rb:
+    1  require "test_helper"
+    2
+    3: class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+    4    # test "connects with cookies" do
+    5    #   cookies.signed[:user_id] = 42
+
+90 matches across 46 files
+
+
+Searching 206 files for "what you really"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/javascript/packs/application.js:
+   15  if (check) {
+   16    var typed = new Typed('.typed', {
+   17:     strings: [" GET YOUR PRICE ALERT NOW.", "WHAT ITEM DO YOU WANT TO SEARCH FOR?", "SO TELL ME WHAT YOU WANT", "WHAT YOU REALLY REALLY WANT!",
+   18:      "I'LL TELL YOU WHAT YOU WANT", "WHAT YOU REALLY, REALLY WANT", "YOU WANT DEALS!!!!", "WHAT PRODUCT DO YOU WANT?"],
+   19      typeSpeed: 45
+   20    });
+
+2 matches in 1 file
+
+
+Searching 206 files for "faq"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/yarn.lock:
+ 2297    version "4.0.1"
+ 2298    resolved "https://registry.yarnpkg.com/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.1.tgz#574082fb2859d2db433855835d9a8456ea18bbf3"
+ 2299:   integrity sha512-WcKx5OY+KoSIAxBW6UBBRay1U6vkYheCdjyVNDm85zt5K9mHoGOfsOsqIszfAqrQQFIIKgjh2+FDgIj/zsl21Q==
+ 2300
+ 2301  cssnano@^4.1.10:
+ 2302    version "4.1.10"
+ 2303    resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.10.tgz#0ac41f0b13d13d465487e111b778d42da631b8b2"
+ 2304:   integrity sha512-5wny+F6H4/8RgNlaqab4ktc3e0/blKutmq8yNlBFXA//nSFFAqAngjNVRzUvCgYROULmZZUoosL/KSoZo5aUaQ==
+ 2305    dependencies:
+ 2306      cosmiconfig "^5.0.0"
+ ....
+ 3873    version "1.0.3"
+ 3874    resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.3.tgz#38e1014b9e6329be0de9d24a414fd7441ec61937"
+ 3875:   integrity sha512-OwijhaRSgqvhm/0ZdAcXNZt9lYdKFpcRDT5ULUuYXPoT794UNOdU+gpT6Rzo7b4V2HUl/op6GqY894AZwv9faQ==
+ 3876    dependencies:
+ 3877      has-symbols "^1.0.1"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/controllers/pages_controller.rb:
+    4    def home
+    5    end
+    6: #additions for faq and about pages
+    7    def about
+    8    end
+    9
+   10:   def faq
+   11    end
+   12  end
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/pages/home.html.erb:
+   36          <a href="#"><i class="fab fa-facebook"></i></a>
+   37          <a href="#"><i class="fab fa-twitter"></i></a>
+   38:         <%= link_to "FAQ", pages_faq_path %>
+   39          <%= link_to "About us", pages_about_path %>
+   40        </div>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/config/routes.rb:
+    3    root to: 'pages#home'
+    4    get 'pages/about', to: 'pages#about'
+    5:   get 'pages/faq', to: 'pages#faq'
+    6
+    7
+
+9 matches across 4 files
+
+
+Searching 206 files for "profile-picture"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/assets/stylesheets/components/_profile-page.scss:
+   11  }
+   12
+   13: .profile-picture {
+   14    height: 100px;
+   15    width: 100px;
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/assets/stylesheets/components/_usershow.scss:
+   23    margin-left: 14px;
+   24  }
+   25: .profile-picture{
+   26    height: 100px;
+   27    width: 100px;
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/pages/about.html.erb:
+   13    <div class="card" style="padding:20px; border-radius:10px; color:#6D7D90; margin-top:10px">
+   14     <div class="profiles">
+   15:       <%= image_tag("Alex.png", :alt => "Alex - Cherrypickr team", class: "profile-picture") %>
+   16:       <%= image_tag("Naomi.png", :alt => "Naomi - Cherrypickr team", class: "profile-picture") %>
+   17:       <%= image_tag("Priyesh.png", :alt => "Priyesh - Cherrypickr team", class: "profile-picture") %>
+   18:       <%= image_tag("Eric.png", :alt => "Eric - Cherrypickr team", class: "profile-picture") %>
+   19      </div>
+   20     </div>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/shared/_navbar.html.erb:
+   35          </li> -->
+   36          <li class="nav-item dropdown">
+   37:           <%= image_tag "profile-picture.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+   38            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+   39              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/users/show.html.erb:
+    8
+    9              <div class="d-flex">
+   10:               <%= image_tag "profile-picture.png", alt: "alttext",  class: "profile-picture" %>
+   11                <h4> <strong> Name: </strong> Clara Shaftbury <br><br>
+   12                <strong> Email: </strong> Clara@gmail.com  </h4>
+
+9 matches across 5 files
+
+
+Searching 206 files for "profiles"
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/assets/stylesheets/components/_profile-page.scss:
+    6    }
+    7
+    8: .profiles {
+    9    display: flex;
+   10    justify-content: space-between;
+
+/Users/ravi/code/Priyesh2109/cherrypickr/app/views/pages/about.html.erb:
+   12    </div>
+   13    <div class="card" style="padding:20px; border-radius:10px; color:#6D7D90; margin-top:10px">
+   14:    <div class="profiles">
+   15        <%= image_tag("Alex.png", :alt => "Alex - Cherrypickr team", class: "profile-picture") %>
+   16        <%= image_tag("Naomi.png", :alt => "Naomi - Cherrypickr team", class: "profile-picture") %>
+
+2 matches across 2 files

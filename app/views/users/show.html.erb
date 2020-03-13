@@ -3,68 +3,55 @@
     <h2>Your Profile</h2>
       <div class="container-profile">
         <div class="row">
+
           <div class ="col-6">
+
             <div class="d-flex">
-            <%= image_tag "profile-picture.png", alt: "alttext",  class: "profile-picture" %>
-            <h4> <strong> Name: </strong> Clara Shaftbury <br><br>
-            <strong> Email: </strong> Clara@gmail.com  </h4>
+              <%= image_tag "profile-picture.png", alt: "alttext",  class: "profile-picture" %>
+              <h4> <strong> Name: </strong> Clara Shaftbury <br><br>
+              <strong> Email: </strong> Clara@gmail.com  </h4>
             </div>
 
             <br><br>
 
             <h4>Your Settings</h4>
-
             <h4> Your current location:  Hoxton <br> Range:        5km </h4> <br><br>
             <h4>Filter by Supermarkets: </h4>
-             <%= form_tag user_path(current_user), method: :get, class: "search-form1 user-form d-flex" do %>
-               <div class="supermarket no border">
-                 <%= text_field_tag :query,
-                   params[:query],
-                   class: "no-border userbar",
-                   placeholder: "Enter Supermarket"
-                 %>
 
+            <%= form_tag user_path(current_user), method: :get, class: "user-form d-flex" do %>
+                 <%= text_field_tag :query, params[:query], class: "no-border userbar", placeholder: "Enter Supermarket"%>
                  <%= button_tag "Click Here", class: "btn btn-primary rounded" %>
+            <% end %>
 
-              <% end %>
-          </div>
-         <!--  <div class ="container d-flex" id="map"
-           style="width: 40%;
-           border-radius: 16px;
-           height: 500px;"
-           data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
-          </div> -->
-
-           <div class="product-map" id="map"
-          style="width: 40%;
-          border-radius: 10px;
-          height: 350px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
+        <div class ="col-6">
+           <div class="product-map" id="map"
+            style="width: 100%;
+            border-radius: 10px;
+            height: 350px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
 
         </div>
       </div>
-
+    </div>
       <div class="container-profile-2">
         <h3>Your Watchlist Items</h3>
-          <div class="flex-box">
-            <div class="row">
-              <% @products.each do |product| %>
-                <div class="col-md-3">
-                  <div class="card-index mb-3 ml-3 p-3" style="border-radius:20px">
-                    <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
-                      <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
-            <!--             <p class="mb-2" style="width: 170px"><%= product.supermarket.name%></p> -->
-                      <p class="text-center mb-3"><strong>Cheapest price:</strong> <strong><%=product.price%></strong>
-                      <span class="spmkt-img-2"><%= image_tag product.supermarket.image%>
-                  </div>
+        <div class="flex-box">
+          <div class="row">
+            <% @products.each do |product| %>
+              <div class="col-md-3">
+                <div class="card-index mb-3" style="border-radius:20px">
+                  <%= image_tag product.image, alt: "alttext", class: "prod-img mb-3" %>
+                    <p class="text-center mb-2 ml-4" style="width: 170px"><%= product.name%></p>
+                    <p class="text-center mb-3"><strong>Cheapest price:</strong> <strong><%=product.price%></strong>
+                    <span class="spmkt-img-2"><%= image_tag product.supermarket.image%>
                 </div>
-               <% end %>
-            </div>
-         </div>
+              </div>
+             <% end %>
+          </div>
+       </div>
       </div>
   </div>
 </div>
