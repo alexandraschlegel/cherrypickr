@@ -22,8 +22,25 @@
   font-weight: bolder;
   margin-left: 14px;
 }
-
-
+.profile-picture{
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
+.search-form1{
+  margin-top: 6px;
+  padding-top: 8px;
+}
+.supermarket{
+  width: 48%;
+  margin-top: 48px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+    &:focus{
+    outline: none;
+  }
+}
 
 .container-profile h5{
   margin-top:0px;
