@@ -4,11 +4,19 @@
       <div class="container-profile">
         <div class="row">
           <div class ="col-6">
+            <div class="d-flex">
+            <%= image_tag "profile-picture.png", alt: "alttext",  class: "profile-picture" %>
+            <h4> <strong> Name: </strong> Clara Shaftbury <br><br>
+            <strong> Email: </strong> Clara@gmail.com  </h4>
+            </div>
+
+            <br><br>
+
             <h4>Your Settings</h4>
-            <h5> Your current location is: <em>Hoxton</em> with range:<em> 5km </em> </h5>
-            <h4>Add Another Location</h4>
-             <%= form_tag user_path(current_user), method: :get, class: "search-form" do %>
-               <div class="search-boxes-inline d-flex">
+            <h4> Your current location:  Hoxton <br> Range:        5km </h4> <br><br>
+            <h4>Filter by Supermarkets: </h4>
+             <%= form_tag user_path(current_user), method: :get, class: "search-form1" do %>
+               <div class="supermarket no border">
                  <%= text_field_tag :query,
                  params[:query],
                  placeholder: "Enter Supermarket"
