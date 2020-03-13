@@ -78,7 +78,8 @@ seed_products = [{price: '£0.85', name: 'Oatly Foamable 1 Litre'},
                 {price: '£1.75', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
                 {price: '£1.55', name: 'Oatly H healthy oat dairy-free chocolate'},
                 {price: '£1.45', name: 'Alpro Unsweetened Oat Drink 1L'},
-                {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+                {price: '£2.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"},
+                {price: '£2.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
  seed_products.each do |seed_product|
   if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -88,7 +89,7 @@ end
 
 
 # sainsburys = Supermarket.create!(name: "Sainsburys", website: "https://www.sainsburys.com")
-seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'},
+seed_products_2 = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'},
                     {price: '£1.80', name: 'Oatly Oat Drink Whole 1 Litre'},
                     {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'},
                     {price: '£1.80', name: 'Oatly Oat Drink Low Fat'},
@@ -103,7 +104,8 @@ seed_products_2 = [{price: '£1.80', name: 'Oatly Foamable 1 Litre'},
                     {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
                     {price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'},
                     {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'},
-                    {price: '£2.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+                    {price: '£2.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"},
+                    {price: '£3.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
   seed_products_2.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -117,7 +119,7 @@ seed_products_300 = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: 
 {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
 {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
 {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}, {price: '£4.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
   seed_products_300.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -131,7 +133,7 @@ seed_products_200 = [{price: '£1.85', name: 'Oatly Foamable 1 Litre'}, {price: 
 {price: '£1.80', name: 'Oatly Oat Drink Semi 1 Litre'}, {price: '£1.80', name: 'Oatly Oat Drink Low Fat'}, {price: '£1.25', name: 'Alpro Oat Unsweetened 1000 Ml'}, {price: '£1.25', name: 'Alpro Oat Drink Alternative 1 Litre'},  {price: '£1.55', name: 'Plenish Organic Oat M*lk'},
 {price: '£1.25', name: 'Innocent Oat Dairy Free 750Ml'}, {price: '£1.50', name: 'Rude Health oat drink'}, {price: '£1.55', name: 'Plenish Oat+ Enriched'},
 {price: '£1.60', name: 'Alpro Chocolate Oat Drink'}, {price: '£1.00', name: 'Oatly Organic Longlife Drink Alternative 1 Litre'}, {price: '£1.50', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
-{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+{price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'}, {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'}, {price: '£4.5O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}, {price: '£3.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
   seed_products_200.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -210,7 +212,8 @@ seed_products_101 = [{price: '£1.70', name: 'Oatly Foamable 1 Litre'},
                     {price: '£1.45', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
                     {price: '£1.40', name: 'Oatly H healthy oat dairy-free chocolate'},
                     {price: '£1.20', name: 'Alpro Unsweetened Oat Drink 1L'},
-                    {price: '£3.0O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+                    {price: '£3.0O', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"},
+                    {price: '£4.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
   seed_products_101.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image
@@ -233,7 +236,8 @@ seed_products_102 = [{price: '£1.75', name: 'Oatly Foamable 1 Litre'},
                     {price: '£1.49', name: 'Oatly Chocolate Longlife Drink Alternative 1 Litre'},
                     {price: '£1.50', name: 'Oatly H healthy oat dairy-free chocolate'},
                     {price: '£1.25', name: 'Alpro Unsweetened Oat Drink 1L'},
-                    {price: '£4.50', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"}]
+                    {price: '£4.50', name: "Ben & Jerry's Cookie Dough Vanilla Ice Cream 465Ml"},
+                    {price: '£4.5O', name: "Ben And Jerry's Netflix & Chilld Ice Cream 465Ml"}]
   seed_products_102.each do |seed_product|
    if Product.where(name: seed_product[:name]).length > 0
     image_src = Product.where(name: seed_product[:name])[0].image

@@ -3,14 +3,20 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @products = @user.products
+    @branches = Branch.all
+    @markers = @branches.map do |branch|
+      {
+        longitude: branch.longitude,
+        latitude: branch.latitude
+      }
+    end
+    if params[:query].present?
+      if params[:query].match?(/\d/)
 
-    unless params[:query].nil?
-      if params[:query]
         @branches = Branch.near(params[:query], 500)
 
         if @branches.any?
           @markers = @branches.map do |branch|
-            # if branch.longitude.nil? || branch.latitude.nil?
             {
               longitude: branch.longitude,
               latitude: branch.latitude
@@ -18,22 +24,18 @@ class UsersController < ApplicationController
           end
         end
 
-      elsif
-
-        if params[:query].present? && ["Tesco", "Waitrose", "Sainsburys"].include?(params[:query])
+      elsif ["Tesco", "Waitrose", "Sainsburys"].include?(params[:query])
           @branches = Supermarket.where(name: params[:query]).first.branches
-          #raise
+
           Branch.near(current_user.location, 500)
           if @branches.any?
             @markers = @branches.map do |branch|
-              # if branch.longitude.nil? || branch.latitude.nil?
               {
                 longitude: branch.longitude,
                 latitude: branch.latitude
               }
             end
           end
-        end
       else
         flash[:alert] = "No Supermarket by that name!"
       end
